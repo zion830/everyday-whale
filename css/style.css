@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Jua');
+
+* {
+    margin: 0 auto;
+    height: 0;
+    font-family: 'Jua', sans-serif;
+}
+
+body {
+    width: 100%;
+    height: auto;
+    overflow-x: hidden;
+}
