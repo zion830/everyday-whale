@@ -6,8 +6,12 @@
   "description": "__MSG_description__",
   "default_locale": "ko",
 
+  "permissions": [
+    "storage"
+  ],
+
   "sidebar_action": {
-    "default_page": "index.html",
+    "default_page": "start.html",
     "default_icon": "img/whale_button.png",
     "mobile_user_agent": false,
     "default_title": "__MSG_name__"

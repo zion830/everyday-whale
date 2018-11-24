@@ -2,7 +2,6 @@
 
 * {
     margin: 0 auto;
-    height: 0;
     font-family: 'Jua', sans-serif;
 }
 
@@ -10,4 +9,55 @@ body {
     width: 100%;
     height: auto;
     overflow-x: hidden;
+    text-align: center;
 }
+
+h3 {
+    text-align: center;
+    color: #296e81;
+    font-size: 1.8em;
+    font-weight: normal;
+    padding-top: 10%;
+}
+
+/*시작 페이지*/
+.gradient {
+    background-image: linear-gradient(#c6eaff, #ffffff, #ffffff);
+}
+
+.btn-submit {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.1rem 1.2rem;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    border-radius: 0.5rem;
+    background: #003c72;
+    color: #ffffff;
+    margin-top: 3%;
+}
+
+.input-name {
+    border: 1px solid transparent;
+    border-bottom: 1.5px solid #003c72;
+    text-align: center;
+    font-size: 1.8em;
+}
+
+.btn-submit:hover {
+    color: #d8ecff;
+}
+
+#whale-start {
+    max-width: 300px;
+    height: auto;
+    margin: 5% 0 2% 0;
+}
+
+/*메인 페이지*/
