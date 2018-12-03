@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Jua');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:500');
 
 * {
     margin: 0 auto;
     font-family: 'Jua', sans-serif;
+    font-weight: normal;
 }
 
 body {
@@ -16,13 +18,17 @@ h3 {
     text-align: center;
     color: #296e81;
     font-size: 1.8em;
-    font-weight: normal;
     padding-top: 10%;
+}
+
+a, a:hover {
+    text-decoration: none;
+    text-align: center;
 }
 
 /*시작 페이지*/
 .gradient {
-    background-image: linear-gradient(#c6eaff, #ffffff, #ffffff);
+    background-image: linear-gradient(#c6eaff, white, white);
 }
 
 .btn-submit {
@@ -39,15 +45,17 @@ h3 {
     line-height: 1.5;
     border-radius: 0.5rem;
     background: #003c72;
-    color: #ffffff;
-    margin-top: 3%;
+    color: white;
+    margin-top: 7%;
+    outline: none;
 }
 
-.input-name {
+#whale-name {
     border: 1px solid transparent;
     border-bottom: 1.5px solid #003c72;
     text-align: center;
     font-size: 1.8em;
+    outline: none;
 }
 
 .btn-submit:hover {
@@ -60,4 +68,85 @@ h3 {
     margin: 5% 0 2% 0;
 }
 
+#name-msg {
+    color: red;
+    margin: 1em;
+}
+
 /*메인 페이지*/
+#menu {
+    display: inline-block;
+}
+
+.btn {
+    color: #296e81;
+    text-decoration: none;
+    text-align: center;
+    margin-left: 10%;
+    font-size: 1.4em;
+    font-weight: lighter;
+}
+
+.btn-img {
+    width: 35px;
+}
+
+.btn-menu {
+    float: left;
+    margin: 1.5em;
+}
+
+#whale-main {
+    width: 320px;
+    animation: swing 2s ease-in-out infinite;
+}
+
+#body-main {
+    background: white url("../img/background.png") no-repeat;
+    background-size: 590px auto;
+}
+
+#whale-info {
+    margin-top: 1em;
+    font-size: 2.5em;
+    color: #003c72;
+    text-shadow: 1px 1px 0 white,
+    -1px -1px 0 white, 1px -1px 0 white,
+    -1px 1px 0 white, 1px 1px 0 white;
+}
+
+.todo-list {
+    font-size: 1.3em;
+    margin: 2em 2em;
+    text-align: left;
+    padding: 0;
+    list-style-type: none
+}
+
+li {
+    font-family: 'Noto Sans KR', sans-serif;
+    padding: 0.5em 0.7em;
+    margin-bottom: 10px;
+    background: #f2f7ff;
+    color: #003c72;
+    border-radius: 0.5em;
+    border: 1.5px solid #003c72;
+}
+
+.checkbox {
+    width: 20px;
+    margin-right: 5px;
+}
+
+/* 애니메이션 */
+@keyframes swing {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(15px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}

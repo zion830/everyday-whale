@@ -2,16 +2,15 @@
   "manifest_version": 2,
   "name": "__MSG_name__",
   "version": "1.0.0",
-
   "description": "__MSG_description__",
   "default_locale": "ko",
 
   "permissions": [
-    "storage"
+    "storage",
+    "unlimitedStorage"
   ],
-
   "sidebar_action": {
-    "default_page": "start.html",
+    "default_page": "index.html",
     "default_icon": "img/whale_button.png",
     "mobile_user_agent": false,
     "default_title": "__MSG_name__"
