@@ -4,15 +4,21 @@
   "version": "1.0.0",
   "description": "__MSG_description__",
   "default_locale": "ko",
-
   "permissions": [
     "storage",
-    "unlimitedStorage"
+    "unlimitedStorage",
+    "contextMenus"
   ],
   "sidebar_action": {
     "default_page": "index.html",
-    "default_icon": "img/whale_button.png",
-    "mobile_user_agent": false,
+    "default_icon": "img/ic_whale.png",
+    "use_navigation_bar": false,
     "default_title": "__MSG_name__"
-  }
+  },
+  "icons": {
+    "16": "img/ic_whale.png",
+    "48": "img/ic_whale.png",
+    "128": "img/ic_whale.png"
+  },
+  "content_security_policy": "script-src 'self' 'unsafe-inline'; object-src 'self'"
 }

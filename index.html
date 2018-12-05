@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html>
 <head>
     <meta charset="UTF-8">
     <title>매일웨일</title>
@@ -8,39 +8,57 @@
     <script src="js/database.js"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body id="body-main">
-<div id="menu">
-    <div class="btn-menu">
-        <a href="whale.html" class="btn">
-            <img src="img/ic_whale.png" alt="웨일 버튼" class="btn-img">
-            <br>웨일</a>
+<body class="body-main">
+<div class="body-center">
+    <div id="menu">
+        <div class="btn-menu">
+            <a href="whale.html" class="btn">
+                <img src="img/ic_whale.png" alt="웨일 버튼" class="btn-img">
+                <br>웨일</a>
+        </div>
+        <div class="btn-menu">
+            <a href="todo.html" class="btn">
+                <img src="img/ic_todo.png" alt="할일 버튼" class="btn-img">
+                <br>할일</a>
+        </div>
+        <div class="btn-menu">
+            <a href="setting.html" class="btn">
+                <img src="img/ic_setting.png" alt="설정 버튼" class="btn-img">
+                <br>설정</a>
+        </div>
     </div>
-    <div class="btn-menu">
-        <a href="todo.html" class="btn">
-            <img src="img/ic_todo.png" alt="할일 버튼" class="btn-img">
-            <br>할일</a>
-    </div>
-    <div class="btn-menu">
-        <a href="setting.html" class="btn">
-            <img src="img/ic_setting.png" alt="설정 버튼" class="btn-img">
-            <br>설정</a>
-    </div>
-</div>
-<br>
+    <br>
 
-<img src="img/whale3.gif" alt="웨일 이미지" id="whale-main">
-<h1 id="whale-info">Lv3. 웨이</h1>
+    <img src="img/whale1.gif" alt="웨일 이미지" id="whale-main">
+    <h1 class="whale-info"></h1>
+</div>
 <br>
 
 <ul class="todo-list">
     <li>
         <img src="img/checked.png" alt="체크됨" class="checkbox">
         토익 인강 시청하기
-        <a href="#">X</a>
     </li>
-    <li>토익 단어 100개 외우기</li>
-    <li>알고리즘 문제풀기</li>
-    <a href="#"><li>+</li></a>
+    <li>
+        <img src="img/checked.png" alt="체크됨" class="checkbox">
+        토익 단어 100개 외우기
+    </li>
+    <li>
+        <img src="img/unchecked.png" alt="체크됨" class="checkbox">
+        알고리즘 문제풀기
+    </li>
+
+    <li>
+        <img src="img/checked.png" alt="체크됨" class="checkbox">
+        토익 단어 100개 외우기
+    </li>
+    <li>
+        <img src="img/unchecked.png" alt="체크됨" class="checkbox">
+        알고리즘 문제풀기
+    </li>
+    <a href="#">
+        <li>+</li>
+    </a>
 </ul>
 </body>
 </html>

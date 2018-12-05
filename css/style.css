@@ -7,7 +7,7 @@
     font-weight: normal;
 }
 
-body {
+.body-center {
     width: 100%;
     height: auto;
     overflow-x: hidden;
@@ -47,7 +47,6 @@ a, a:hover {
     background: #003c72;
     color: white;
     margin-top: 7%;
-    outline: none;
 }
 
 #whale-name {
@@ -55,7 +54,6 @@ a, a:hover {
     border-bottom: 1.5px solid #003c72;
     text-align: center;
     font-size: 1.8em;
-    outline: none;
 }
 
 .btn-submit:hover {
@@ -65,7 +63,8 @@ a, a:hover {
 #whale-start {
     max-width: 300px;
     height: auto;
-    margin: 5% 0 2% 0;
+    margin: 5% 0 7% 0;
+    animation: swing 3s ease-in-out infinite;
 }
 
 #name-msg {
@@ -97,17 +96,16 @@ a, a:hover {
 }
 
 #whale-main {
-    width: 320px;
+    width: 350px;
     animation: swing 2s ease-in-out infinite;
 }
 
-#body-main {
+.body-main {
     background: white url("../img/background.png") no-repeat;
     background-size: 590px auto;
 }
 
-#whale-info {
-    margin-top: 1em;
+.whale-info {
     font-size: 2.5em;
     color: #003c72;
     text-shadow: 1px 1px 0 white,
@@ -136,6 +134,63 @@ li {
 .checkbox {
     width: 20px;
     margin-right: 5px;
+}
+
+/* 설정 */
+#btn-back {
+    width: 30px;
+    margin: 15px;
+    display: block;
+}
+
+#setting-main {
+    text-align: center;
+}
+
+.setting-title {
+    color: #003c72;
+}
+
+.setting-des {
+    color: #19aac1;
+    margin: 0.5em;
+}
+
+hr {
+    margin: 2em 5em;
+}
+
+.link {
+    margin-top: 1em;
+    text-align: center;
+}
+
+.btn-clear {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.1rem 1.2rem;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    border-radius: 0.5rem;
+    background: #003c72;
+    color: white;
+    margin-top: 2%;
+}
+
+h4 {
+    margin-top: 10px;
+    font-size: 1.1em;
+}
+
+.email {
+    font-family: 'Noto Sans KR', sans-serif;
+    color: #003c72;
 }
 
 /* 애니메이션 */
