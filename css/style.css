@@ -205,3 +205,9 @@ h4 {
         transform: translateY(0);
     }
 }
+
+/* 웨일 */
+.cssProgress {
+    margin-top: 1em;
+    max-width: 300px;
+}
