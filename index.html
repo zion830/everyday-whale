@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>매일웨일</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/database.js"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -38,27 +38,17 @@
     <li>
         <img src="img/checked.png" alt="체크됨" class="checkbox">
         토익 인강 시청하기
-    </li>
-    <li>
-        <img src="img/checked.png" alt="체크됨" class="checkbox">
-        토익 단어 100개 외우기
+        <input type="button" value="완료" class="btn-finish">
     </li>
     <li>
         <img src="img/unchecked.png" alt="체크됨" class="checkbox">
-        알고리즘 문제풀기
-    </li>
-
-    <li>
-        <img src="img/checked.png" alt="체크됨" class="checkbox">
         토익 단어 100개 외우기
+        <input type="button" value="삭제" class="btn-finish">
     </li>
     <li>
-        <img src="img/unchecked.png" alt="체크됨" class="checkbox">
-        알고리즘 문제풀기
+        <input type="text" placeholder="새로운 할 일" id="new-to-do">
+        <input type="button" value="+" id="add-to-do" class="btn-finish">
     </li>
-    <a href="#">
-        <li>+</li>
-    </a>
 </ul>
 </body>
 </html>

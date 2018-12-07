@@ -136,6 +136,18 @@ li {
     margin-right: 5px;
 }
 
+#new-to-do {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: #00000000;
+    border: none;
+    font-size: 1.0em;
+}
+
+.btn-finish {
+    float: right;
+    margin-top: 5px;
+}
+
 /* 설정 */
 #btn-back {
     width: 30px;

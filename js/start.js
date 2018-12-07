@@ -1,5 +1,8 @@
 function setName() {
     const name = $('#whale-name').val();
+    console.log("이름");
+    console.log(name);
+
     if (name.length === 0) {
         $('#name-msg').text("웨일의 이름을 입력해주세요!");
     }
