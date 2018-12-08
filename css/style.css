@@ -122,7 +122,6 @@ a, a:hover {
 }
 
 li {
-    font-family: 'Noto Sans KR', sans-serif;
     padding: 0.5em 0.7em;
     margin-bottom: 10px;
     background: #f2f7ff;
@@ -145,7 +144,81 @@ li {
 
 .btn-finish {
     float: right;
-    margin-top: 5px;
+    display: inline-block;
+    width: 30px;
+    height: 40px;
+    background-image: url("../img/check.png");
+    background-size: 25px;
+    vertical-align: middle;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-add {
+    float: right;
+    display: inline-block;
+    width: 30px;
+    height: 35px;
+    background-image: url("../img/plus.png");
+    background-size: 25px;
+    vertical-align: middle;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+}
+
+/* 커스텀 체크박스 */
+.container {
+    font-family: 'Noto Sans KR', sans-serif;
+    display: inline-block;
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    vertical-align: middle;
+    background-image: url("../img/unchecked.png");
+    background-size: 25px;
+    background-repeat: no-repeat;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.container .checkmark:after {
+    width: 25px;
+    height: 25px;
+    background-image: url("../img/checked.png");
+    background-size: 25px;
+    background-repeat: no-repeat;
 }
 
 /* 설정 */
