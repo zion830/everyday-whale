@@ -9,8 +9,8 @@ window.onload = function () {
             console.log(value);
             if (value.finishDate != null) {
                 str += '<li class="finish-item">' + value.todo
-                    + '<br><span class="date">완료일자 | ' +
-                    value.finishDate +
+                    + '<br><span class="date">진행기간 | ' +
+                    value.addDate + " ~ " + value.finishDate +
                     '</span></li>';
             }
         })

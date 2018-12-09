@@ -49,22 +49,24 @@ a, a:hover {
     margin-top: 7%;
 }
 
-#storytitlediv {
+#story-title-div {
     text-align: center;
-    margin-top: 55px;
-    margin-bottom: 10px;
+    margin-top: 90px;
+    margin-bottom: 15px;
 }
 
-#storydiv {
+#story-div {
+    margin-left: 1em;
+    margin-right: 1em;
     text-align: center;
 }
 
-.storybutton {
+.story-button {
     border: 2px solid #006689;
     border-radius: 8px;
     background-color: white;
-    width: 68px;
-    height: 68px;
+    width: 60px;
+    height: 60px;
     display: inline-block;
     font-size: 4em;
     color: #ffb217;
@@ -79,23 +81,24 @@ a, a:hover {
     display: inline;
 }
 
-#storytitle {
+#story-title {
     font-size: 1.7em;
     color: #006689;
     display: inline;
 }
 
-#storysubtitle {
+#story-subtitle {
     font-size: 1.3em;
     color: #8C8C8C;
     display: inline;
+    margin-top: 10px;
 }
 
-.storycontent, #story {
+.story-content, #story {
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 1.2em;
     color: #006689;
-    margin: 1em 1.5em 1em 1.5em;
+    margin: 1em;
 }
 
 #whale-name {
@@ -178,7 +181,6 @@ a, a:hover {
 .whale-info2 {
     font-size: 2.2em;
     color: #003c72;
-    margin-top: 0.7em;
     margin-bottom: 0.2em;
     text-shadow: 1px 1px 0 white,
     -1px -1px 0 white, 1px -1px 0 white,

@@ -133,77 +133,113 @@ function arrayRemove(value) {
 }
 
 function setWhale(level) {
-    if (level < 3) {
+    if (level < 4) {
         $('#whale-main').attr("src", "/img/whale1.gif");
+        $('#whale-whalepage').attr("src", "/img/whale1.gif");
     } else if (level < 9) {
         $('#whale-main').attr("src", "/img/whale2.gif");
+        $('#whale-whalepage').attr("src", "/img/whale2.gif");
     } else if (level < 16) {
         $('#whale-main').attr("src", "/img/whale3.gif");
+        $('#whale-whalepage').attr("src", "/img/whale3.gif");
     } else if (level < 27) {
         $('#whale-main').attr("src", "/img/whale4.gif");
+        $('#whale-whalepage').attr("src", "/img/whale4.gif");
     } else {
         $('#whale-main').attr("src", "/img/whale5.gif");
+        $('#whale-whalepage').attr("src", "/img/whale5.gif");
     }
 }
 
 function setLevel() {
     var count = localStorage.getItem("sumCount");
+    var exp;
     var level;
     if (count < 3) {
         level = 1;
+        exp = count % 3 + " / 3";
     } else if (count < 6) {
         level = 2;
+        exp = count % 3 + " / 3";
     } else if (count < 9) {
         level = 3;
+        exp = count % 3 + " / 3";
     } else if (count < 14) {
         level = 4;
+        exp = count % 5 + " / 5";
     } else if (count < 19) {
         level = 5;
+        exp = count % 5 + " / 5";
     } else if (count < 24) {
         level = 6;
+        exp = count % 5 + " / 5";
     } else if (count < 29) {
         level = 7;
+        exp = count % 5 + " / 5";
     } else if (count < 34) {
         level = 8;
+        exp = count % 5 + " / 5";
     } else if (count < 40) {
         level = 9;
+        exp = count % 6 + " / 6";
     } else if (count < 46) {
         level = 10;
+        exp = count % 6 + " / 6";
     } else if (count < 52) {
         level = 11;
+        exp = count % 6 + " / 6";
     } else if (count < 59) {
         level = 12;
+        exp = count % 7 + " / 7";
     } else if (count < 66) {
         level = 13;
+        exp = count % 7 + " / 7";
     } else if (count < 73) {
         level = 14;
+        exp = count % 7 + " / 7";
     } else if (count < 80) {
         level = 15;
+        exp = count % 7 + " / 7";
     } else if (count < 87) {
         level = 16;
+        exp = count % 7 + " / 7";
     } else if (count < 94) {
         level = 17;
+        exp = count % 7 + " / 7";
     } else if (count < 101) {
         level = 18;
+        exp = count % 7 + " / 7";
     } else if (count < 108) {
         level = 19;
+        exp = count % 7 + " / 7";
     } else if (count < 115) {
         level = 20;
+        exp = count % 8 + " / 8";
     } else if (count < 122) {
         level = 21;
+        exp = count % 8 + " / 8";
     } else if (count < 130) {
         level = 22;
+        exp = count % 8 + " / 8";
     } else if (count < 138) {
         level = 23;
+        exp = count % 8 + " / 8";
     } else if (count < 146) {
         level = 24;
+        exp = count % 8 + " / 8";
     } else if (count < 154) {
         level = 25;
+        exp = count % 8 + " / 8";
     } else if (count < 162) {
         level = 26;
+        exp = count % 10 + " / 10";
     } else {
-        level = 27 + (count - 162) / 10
+        level = 27 + (count - 162) / 10;
+        exp = count % 10 + " / 10";
     }
 
+    $(".cssProgress-label").text(exp);
+
     localStorage.setItem("level", level);
+    localStorage.setItem("exp", exp);
 }
