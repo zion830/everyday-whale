@@ -11,3 +11,9 @@ function clearData() {
         location.reload();
     }
 }
+
+$(function () {
+    $('.btn-clear').click(function () {
+        clearData();
+    });
+});

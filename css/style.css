@@ -50,32 +50,32 @@ a, a:hover {
 }
 
 #storydiv {
-  text-align: center;
-  margin-top: 1.5em;
+    text-align: center;
+    margin-top: 1.5em;
 }
 
 .storybox {
-  border: 2px solid #006689;
-  border-radius: 8px;
-  background-color: white;
-  width: 68px;
-  height: 68px;
-  display: inline-block;
-  font-size: 4em;
-  color: #ffb217;
-  text-align: center;
-  vertical-align: middle;
-  margin: 0.7%;
+    border: 2px solid #006689;
+    border-radius: 8px;
+    background-color: white;
+    width: 68px;
+    height: 68px;
+    display: inline-block;
+    font-size: 4em;
+    color: #ffb217;
+    text-align: center;
+    vertical-align: middle;
+    margin: 0.7%;
 }
 
 #heart {
-  width: 0.7em;
-  margin: 1.8px 8px;
+    width: 0.7em;
+    margin: 1.8px 8px;
 }
 
 #whalestory {
-  font-size: 1.7em;
-  color: #006689;
+    font-size: 1.7em;
+    color: #006689;
 }
 
 #whale-name {
@@ -157,6 +157,10 @@ a, a:hover {
     list-style-type: none
 }
 
+.todo-text {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
 li {
     font-family: 'Noto Sans KR', sans-serif;
     padding: 0.5em 0.7em;
@@ -183,11 +187,11 @@ li {
     float: right;
     display: inline-block;
     background-image: url("../img/close.png");
-    background-size: 20px;
+    background-size: 15px;
     vertical-align: middle;
     background-color: transparent;
     margin-top: 5px;
-    padding-right: 20px;
+    padding-right: 15px;
     padding-bottom: 5px;
     background-repeat: no-repeat;
     border: none;
@@ -201,16 +205,13 @@ li {
     background-size: 25px;
     vertical-align: middle;
     background-color: transparent;
-    padding-right: 21px;
+    padding-right: 20px;
     padding-bottom: 10px;
     background-repeat: no-repeat;
     border: none;
     cursor: pointer;
 }
 
-#list-msg {
-    margin-top: 50px;
-}
 /* 커스텀 체크박스 */
 .container {
     font-family: 'Noto Sans KR', sans-serif;
@@ -241,7 +242,7 @@ input[type="checkbox"] {
     width: 25px;
     vertical-align: middle;
     background-image: url("../img/unchecked.png");
-    background-size: 25px;
+    background-size: 20px;
     background-repeat: no-repeat;
 }
 
@@ -259,7 +260,7 @@ input[type="checkbox"] {
     width: 25px;
     height: 25px;
     background-image: url("../img/checked.png");
-    background-size: 25px;
+    background-size: 20px;
     background-repeat: no-repeat;
 }
 
