@@ -162,6 +162,7 @@ a, a:hover {
 }
 
 li {
+    list-style: none;
     font-family: 'Noto Sans KR', sans-serif;
     padding: 0.5em 0.7em;
     margin-bottom: 10px;
@@ -338,4 +339,27 @@ h4 {
     100% {
         transform: translateY(0);
     }
+}
+
+/* 할일 */
+#count-title {
+    margin-top: 1.5em;
+}
+
+#count {
+    color: #f44186;
+}
+
+#finish-msg {
+    color: #ff70a7;
+}
+
+.date {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 0.8em;
+}
+
+.finish-item {
+    word-wrap: normal;
+    display: block;
 }

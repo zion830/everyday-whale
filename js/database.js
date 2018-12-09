@@ -7,26 +7,32 @@ $(function () {
 
     var name = localStorage.getItem("name");
     var level = localStorage.getItem("level");
-    var sumCount = localStorage.getItem("sumCount");
 
     $('.whale-info').text("Lv." + level + " " + name);
-    setWhale(Number(sumCount));
+    setWhale(level);
     initList();
 
     $('.btn-add').click(function () {
         insertData();
     });
 
-    // $("#checkBoxId").change(function(){
-    //     if($("#checkBoxId").is(":checked")){
-    //         $('.todo-text').css()
-    //     }else{
-    //         alert("체크박스 체크 해제!");
-    //     }
-    // });
+    var check = true;
+    $(".container").click(function () {
+        var id = Number(this.id.substring(5, this.id.length));
+        if (check) {
+            var todoList = JSON.parse(localStorage["todoList"]);
+            todoList[id].isChecked = !todoList[id].isChecked;
+            localStorage.setItem("todoList", JSON.stringify(todoList));
+        }
+        check = !check;
+    });
 
     $('.btn-finish').click(function () {
-        arrayRemove(this.id)
+        var todoList = JSON.parse(localStorage["todoList"]);
+        if (todoList[this.id].isChecked)
+            finish(this.id);
+        else
+            arrayRemove(this.id);
     });
 });
 
@@ -59,8 +65,6 @@ function insertData() {
         var newItem = new Todo(todoList.length, todo, false, dateStr, null);
         todoList.push(newItem);
         localStorage.setItem("todoList", JSON.stringify(todoList));
-        todoList.forEach(value => console.log(value));
-
         location.reload();
     }
 }
@@ -72,18 +76,22 @@ function initList() {
         var todoList = JSON.parse(localStorage["todoList"]);
         var id = 0;
         $('#list-msg').text('');
-        var start = '<li id="todo-';
-        var start2 = '\"><label class="container"><span class="todo-text">';
-        var checkEnd = '</span><input type="checkbox"><span class="checkmark"></span></label><input type="button" class="btn-finish"></li>';
+        var start = '<li><label class="container" id="todo-';
+        var start2 = '">';
+        var checkEnd = '<input type="checkbox" checked="checked"><span class="checkmark"></span></label><input type="button" class="btn-finish" id="';
         var unCheckedEnd = '</span><input type="checkbox"><span class="checkmark"></span></label><input type="button" class="btn-finish" id="';
-        var unCheckedEnd2 = '"></li>';
+        var end = '"></li>';
 
         todoList.forEach(value => {
-            str += start + id + start2 + value.todo + unCheckedEnd + id + unCheckedEnd2;
+            if (value.isChecked && value.finishDate === null)
+                str += start + id + start2 + value.todo + checkEnd + id + end;
+            else if (!value.isChecked && value.finishDate === null)
+                str += start + id + start2 + value.todo + unCheckedEnd + id + end;
+
             id++;
         });
     } catch (e) {
-        $('#list-msg').text('아직 할 일이 없습니다!');
+        $('#list-msg').text('첫 번째 할 일을 추가해보세요!');
     }
 
     str += '<li>\n' +
@@ -94,8 +102,22 @@ function initList() {
     $('#todo-list').html(str)
 }
 
+function finish(value) {
+    var arr = JSON.parse(localStorage["todoList"]);
+
+    var date = new Date();
+    var dateStr = date.getFullYear() + '-'
+        + date.getMonth() + '-' + date.getDate();
+
+    arr[value].finishDate = dateStr;
+    localStorage.setItem("todoList", JSON.stringify(arr));
+    localStorage.setItem("sumCount", Number(localStorage.getItem("sumCount")) + 1);
+
+    setLevel();
+    location.reload();
+}
+
 function arrayRemove(value) {
-    alert(value);
     var arr = JSON.parse(localStorage["todoList"]);
     arr.splice(value, 1);
 
@@ -109,8 +131,7 @@ function arrayRemove(value) {
     location.reload();
 }
 
-function setWhale() {
-    var level = localStorage.getItem("level");
+function setWhale(level) {
     if (level < 3) {
         $('#whale-main').attr("src", "/img/whale1.gif");
     } else if (level < 9) {
@@ -125,6 +146,7 @@ function setWhale() {
 }
 
 function setLevel() {
+    var count = localStorage.getItem("sumCount");
     var level;
     if (count < 3) {
         level = 1;
