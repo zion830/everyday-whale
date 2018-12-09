@@ -49,6 +49,35 @@ a, a:hover {
     margin-top: 7%;
 }
 
+#storydiv {
+  text-align: center;
+  margin-top: 1.5em;
+}
+
+.storybox {
+  border: 2px solid #006689;
+  border-radius: 8px;
+  background-color: white;
+  width: 68px;
+  height: 68px;
+  display: inline-block;
+  font-size: 4em;
+  color: #ffb217;
+  text-align: center;
+  vertical-align: middle;
+  margin: 0.7%;
+}
+
+#heart {
+  width: 0.7em;
+  margin: 1.8px 8px;
+}
+
+#whalestory {
+  font-size: 1.7em;
+  color: #006689;
+}
+
 #whale-name {
     border: 1px solid transparent;
     border-bottom: 1.5px solid #003c72;
@@ -105,6 +134,11 @@ a, a:hover {
     background-size: 590px auto;
 }
 
+.body-whale {
+    background: white url("../img/whale_bg.png") no-repeat;
+    background-size: 590px auto;
+}
+
 .whale-info {
     font-size: 2.5em;
     color: #003c72;
@@ -122,6 +156,7 @@ a, a:hover {
 }
 
 li {
+    font-family: 'Noto Sans KR', sans-serif;
     padding: 0.5em 0.7em;
     margin-bottom: 10px;
     background: #f2f7ff;
@@ -135,101 +170,20 @@ li {
     margin-right: 5px;
 }
 
-#new-to-do {
-    font-family: 'Noto Sans KR', sans-serif;
-    background: #00000000;
-    border: none;
-    font-size: 1.0em;
-}
-
-.btn-finish {
-    float: right;
-    display: inline-block;
-    width: 30px;
-    height: 40px;
-    background-image: url("../img/check.png");
-    background-size: 25px;
-    vertical-align: middle;
-    background-color: transparent;
-    background-repeat: no-repeat;
-    border: none;
-    cursor: pointer;
-}
-
-.btn-add {
-    float: right;
-    display: inline-block;
-    width: 30px;
-    height: 35px;
-    background-image: url("../img/plus.png");
-    background-size: 25px;
-    vertical-align: middle;
-    background-color: transparent;
-    background-repeat: no-repeat;
-    border: none;
-    cursor: pointer;
-}
-
-/* 커스텀 체크박스 */
-.container {
-    font-family: 'Noto Sans KR', sans-serif;
-    display: inline-block;
-    position: relative;
-    padding-left: 35px;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-input[type="checkbox"] {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-}
-
-.checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 25px;
-    width: 25px;
-    vertical-align: middle;
-    background-image: url("../img/unchecked.png");
-    background-size: 25px;
-    background-repeat: no-repeat;
-}
-
-.checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-}
-
-.container input:checked ~ .checkmark:after {
-    display: block;
-}
-
-.container .checkmark:after {
-    width: 25px;
-    height: 25px;
-    background-image: url("../img/checked.png");
-    background-size: 25px;
-    background-repeat: no-repeat;
-}
-
 /* 설정 */
 #btn-back {
     width: 30px;
     margin: 15px;
     display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
 }
 
 #setting-main {
     text-align: center;
+    margin-top: 35px;
 }
 
 .setting-title {
@@ -238,11 +192,12 @@ input[type="checkbox"] {
 
 .setting-des {
     color: #19aac1;
+    font-size: 1.1em;
     margin: 0.5em;
 }
 
 hr {
-    margin: 2em 5em;
+    margin: 3em 5em;
 }
 
 .link {
@@ -259,13 +214,13 @@ hr {
     -ms-user-select: none;
     user-select: none;
     border: 1px solid transparent;
-    padding: 0.1rem 1.2rem;
+    padding: 0.2rem 1.2rem 0rem 1.2rem;
     font-size: 1.3rem;
     line-height: 1.5;
     border-radius: 0.5rem;
     background: #003c72;
     color: white;
-    margin-top: 2%;
+    margin-top: 1%;
 }
 
 h4 {
@@ -289,10 +244,4 @@ h4 {
     100% {
         transform: translateY(0);
     }
-}
-
-/* 웨일 */
-.cssProgress {
-    margin-top: 1em;
-    max-width: 300px;
 }

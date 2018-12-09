@@ -1,31 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <title>매일웨일</title>
-    <script src="js/jquery-3.3.1.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="js/database.js"></script>
-    <script src="js/functions.js"></script>
+    <script src="js/story.js"></script>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/cssprogress.min.css">
 </head>
-<body class="body-main">
-<div class="body-center">
+<body class="body-whale">
+  <div class="body-center">
     <a href="index.html"><img src="img/ic_back.png" alt="뒤로가기" id="btn-back"></a>
 
     <img src="img/whale1.gif" alt="웨일 이미지" id="whale-main">
     <p class="whale-info"></p>
-</div>
+  </div>
 
-<div class="cssProgress" id="level">
-    <div class="progress2">
-        <div class="cssProgress-bar" data-percent="75">
-            <span class="cssProgress-label">75%</span>
-        </div>
-    </div>
-</div>
-<h4>웨이의 이야기</h4>
+  <div id="storydiv">
+    <h4 id="whalestory"><img src="img/heart.png" id="heart">웨이의 이야기</h4></br>
+    <button id="story1" class="storybox">1</button>
+    <button id="story2" class="storybox">2</button>
+    <button id="story3" class="storybox">3</button>
+    <button id="story4" class="storybox"><img src="img/ic_storylocked.png" height="50%"></button>
+    <button id="story5" class="storybox"><img src="img/ic_storylocked.png" height="50%"></button>
+  </div>
 
+</script>
 </body>
 </html>
