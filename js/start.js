@@ -8,7 +8,13 @@ function setName() {
     }
     else {
         localStorage.setItem("name", name);
+        localStorage.setItem("level", 1);
+        localStorage.setItem("sumCount", 0);
         history.replaceState({}, "main", "index.html");
         location.reload();
     }
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById("btn-start").addEventListener("click", setName);
+});

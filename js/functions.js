@@ -51,7 +51,7 @@ $(document).ready(function () {
                 '-moz-transition': 'none'
             });
 
-            if (settings.type == 'start') {
+            if (settings.type === 'start') {
 
                 progress_bar.animate({
                     width: percentage

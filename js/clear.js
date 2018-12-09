@@ -3,6 +3,10 @@ function clearData() {
 
     if (clearConfirm) {
         localStorage.removeItem("name");
+        localStorage.removeItem("level");
+        localStorage.removeItem("sumCount");
+        localStorage.removeItem("todoList");
+
         history.replaceState({}, "main", "start.html");
         location.reload();
     }
