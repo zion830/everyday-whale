@@ -27,8 +27,10 @@ var story = ["웨일은 태어나기 전 마음속으로 긴 카운트를 세었
 "이제 우리는 어디를 향해 같이 가볼까요?"]
 
 var level = localStorage.getItem("level");
+var name = localStorage.getItem("name");
 
 $(document).ready(function(){
+    $('#storytitle').text(name + '의 이야기');
     $('#storybutton1').click(function(){
       $('#story').text('');
       for (i = 0; i < level && i < 3; i++){

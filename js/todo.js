@@ -8,7 +8,10 @@ window.onload = function () {
         todoList.forEach(value => {
             console.log(value);
             if (value.finishDate != null) {
-                str += ("<li>" + value.todo + "</li>");
+                str += '<li class="finish-item">' + value.todo
+                    + '<br><span class="date">완료일자 | ' +
+                    value.finishDate +
+                    '</span></li>';
             }
         })
     } else {

@@ -50,58 +50,52 @@ a, a:hover {
 }
 
 #storytitlediv {
-  text-align: center;
-  margin-top: 55px;
-  margin-bottom: 10px;
+    text-align: center;
+    margin-top: 55px;
+    margin-bottom: 10px;
 }
 
 #storydiv {
-  text-align: center;
+    text-align: center;
 }
 
 .storybutton {
-  border: 2px solid #006689;
-  border-radius: 8px;
-  background-color: white;
-  width: 68px;
-  height: 68px;
-  display: inline-block;
-  font-size: 4em;
-  color: #ffb217;
-  text-align: center;
-  vertical-align: middle;
-  margin: 0.7%;
+    border: 2px solid #006689;
+    border-radius: 8px;
+    background-color: white;
+    width: 68px;
+    height: 68px;
+    display: inline-block;
+    font-size: 4em;
+    color: #ffb217;
+    text-align: center;
+    vertical-align: middle;
+    margin: 0.7%;
 }
 
 #heart {
-  width: 0.7em;
-  margin: 4px 8px;
-  display: inline;
+    width: 0.7em;
+    margin: 4px 8px;
+    display: inline;
 }
 
 #storytitle {
-  font-size: 1.7em;
-  color: #006689;
-  display: inline;
+    font-size: 1.7em;
+    color: #006689;
+    display: inline;
 }
 
 #storysubtitle {
-  font-size: 0.9em;
-  color: #8C8C8C;
-  display: inline;
+    font-size: 1.3em;
+    color: #8C8C8C;
+    display: inline;
 }
 
-#story {
-  margin: 2em;
-  font-size: 1.3em;
-  color: #006689;
-}
-
-.storycontent {
-  font-family: 'Noto Sans KR', sans-serif;
-  font-size: 1.1em;
-  color: #006689;
-  margin-bottom: 1.5em;
+.storycontent, #story {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1.2em;
+    color: #006689;
+    margin: 1em 1.5em 1em 1.5em;
 }
 
 #whale-name {
@@ -225,11 +219,11 @@ li {
     float: right;
     display: inline-block;
     background-image: url("../img/close.png");
-    background-size: 20px;
+    background-size: 15px;
     vertical-align: middle;
     background-color: transparent;
     margin-top: 5px;
-    padding-right: 20px;
+    padding-right: 16px;
     padding-bottom: 5px;
     background-repeat: no-repeat;
     border: none;
@@ -243,16 +237,13 @@ li {
     background-size: 25px;
     vertical-align: middle;
     background-color: transparent;
-    padding-right: 21px;
+    padding-right: 20px;
     padding-bottom: 10px;
     background-repeat: no-repeat;
     border: none;
     cursor: pointer;
 }
 
-#list-msg {
-    margin-top: 50px;
-}
 /* 커스텀 체크박스 */
 .container {
     font-family: 'Noto Sans KR', sans-serif;
@@ -278,7 +269,6 @@ input[type="checkbox"] {
     position: absolute;
     top: 0;
     left: 0;
-    margin-top: 3px;
     height: 25px;
     width: 25px;
     vertical-align: middle;
@@ -379,4 +369,27 @@ h4 {
     100% {
         transform: translateY(0);
     }
+}
+
+/* 할일 */
+#count-title {
+    margin-top: 1.5em;
+}
+
+#count {
+    color: #f44186;
+}
+
+#finish-msg {
+    color: #ff70a7;
+}
+
+.date {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 0.8em;
+}
+
+.finish-item {
+    word-wrap: break-word;
+    display: block;
 }
