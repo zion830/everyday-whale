@@ -49,33 +49,59 @@ a, a:hover {
     margin-top: 7%;
 }
 
-#storydiv {
-    text-align: center;
-    margin-top: 1.5em;
+#storytitlediv {
+  text-align: center;
+  margin-top: 55px;
+  margin-bottom: 10px;
 }
 
-.storybox {
-    border: 2px solid #006689;
-    border-radius: 8px;
-    background-color: white;
-    width: 68px;
-    height: 68px;
-    display: inline-block;
-    font-size: 4em;
-    color: #ffb217;
-    text-align: center;
-    vertical-align: middle;
-    margin: 0.7%;
+#storydiv {
+  text-align: center;
+}
+
+.storybutton {
+  border: 2px solid #006689;
+  border-radius: 8px;
+  background-color: white;
+  width: 68px;
+  height: 68px;
+  display: inline-block;
+  font-size: 4em;
+  color: #ffb217;
+  text-align: center;
+  vertical-align: middle;
+  margin: 0.7%;
 }
 
 #heart {
-    width: 0.7em;
-    margin: 1.8px 8px;
+  width: 0.7em;
+  margin: 4px 8px;
+  display: inline;
 }
 
-#whalestory {
-    font-size: 1.7em;
-    color: #006689;
+#storytitle {
+  font-size: 1.7em;
+  color: #006689;
+  display: inline;
+}
+
+#storysubtitle {
+  font-size: 0.9em;
+  color: #8C8C8C;
+  display: inline;
+}
+
+#story {
+  margin: 2em;
+  font-size: 1.3em;
+  color: #006689;
+}
+
+.storycontent {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 1.1em;
+  color: #006689;
+  margin-bottom: 1.5em;
 }
 
 #whale-name {
@@ -130,6 +156,12 @@ a, a:hover {
     animation: swing 2s ease-in-out infinite;
 }
 
+#whale-whalepage {
+    margin-top: 1em;
+    width: 230px;
+    animation: swing 2s ease-in-out infinite;
+}
+
 .body-main {
     background: white url("../img/background.png") no-repeat;
     background-size: 590px auto;
@@ -149,6 +181,16 @@ a, a:hover {
     -1px 1px 0 white, 1px 1px 0 white;
 }
 
+.whale-info2 {
+    font-size: 2.2em;
+    color: #003c72;
+    margin-top: 0.7em;
+    margin-bottom: 0.2em;
+    text-shadow: 1px 1px 0 white,
+    -1px -1px 0 white, 1px -1px 0 white,
+    -1px 1px 0 white, 1px 1px 0 white;
+}
+
 .todo-list {
     font-size: 1.3em;
     margin: 2em 2em;
@@ -157,12 +199,7 @@ a, a:hover {
     list-style-type: none
 }
 
-.todo-text {
-    font-family: 'Noto Sans KR', sans-serif;
-}
-
 li {
-    list-style: none;
     font-family: 'Noto Sans KR', sans-serif;
     padding: 0.5em 0.7em;
     margin-bottom: 10px;
@@ -188,11 +225,11 @@ li {
     float: right;
     display: inline-block;
     background-image: url("../img/close.png");
-    background-size: 15px;
+    background-size: 20px;
     vertical-align: middle;
     background-color: transparent;
     margin-top: 5px;
-    padding-right: 15px;
+    padding-right: 20px;
     padding-bottom: 5px;
     background-repeat: no-repeat;
     border: none;
@@ -206,13 +243,16 @@ li {
     background-size: 25px;
     vertical-align: middle;
     background-color: transparent;
-    padding-right: 20px;
+    padding-right: 21px;
     padding-bottom: 10px;
     background-repeat: no-repeat;
     border: none;
     cursor: pointer;
 }
 
+#list-msg {
+    margin-top: 50px;
+}
 /* 커스텀 체크박스 */
 .container {
     font-family: 'Noto Sans KR', sans-serif;
@@ -243,7 +283,7 @@ input[type="checkbox"] {
     width: 25px;
     vertical-align: middle;
     background-image: url("../img/unchecked.png");
-    background-size: 20px;
+    background-size: 25px;
     background-repeat: no-repeat;
 }
 
@@ -261,7 +301,7 @@ input[type="checkbox"] {
     width: 25px;
     height: 25px;
     background-image: url("../img/checked.png");
-    background-size: 20px;
+    background-size: 25px;
     background-repeat: no-repeat;
 }
 
@@ -339,27 +379,4 @@ h4 {
     100% {
         transform: translateY(0);
     }
-}
-
-/* 할일 */
-#count-title {
-    margin-top: 1.5em;
-}
-
-#count {
-    color: #f44186;
-}
-
-#finish-msg {
-    color: #ff70a7;
-}
-
-.date {
-    font-family: 'Noto Sans KR', sans-serif;
-    font-size: 0.8em;
-}
-
-.finish-item {
-    word-wrap: normal;
-    display: block;
 }
