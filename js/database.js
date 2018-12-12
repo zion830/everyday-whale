@@ -35,6 +35,12 @@ $(function () {
         else
             arrayRemove(this.id);
     });
+
+    $("#new-to-do").keypress(function (e) {
+        if (e.which == 13) {
+            insertData();
+        }
+    });
 });
 
 class Todo {
