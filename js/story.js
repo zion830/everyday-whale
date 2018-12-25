@@ -28,9 +28,54 @@ var story = ["웨일은 태어나기 전 마음속으로 긴 카운트를 세었
 
 var level = localStorage.getItem("level");
 var name = localStorage.getItem("name");
+var nowhale = 5;  // 고래캐릭터디자인 개수
+
+//var storyButtonId = ["whale1_50px", "whale2_50px", "whale3_50px","whale4_50px","whale5_50px"]; // 각 버튼의 id저장
+var isLock = [false, true, true, true, true];   // 버튼 활성화 여부
+
+var Button = {
+   // 입력한 개수만큼 버튼 생성
+   creatButton:function(numOfButton){
+      this.isLock();
+      for(i = 1; i <= numOfButton; i++){
+         $('#story-button-div').append("<button class='story-button' id='storybutton" + i + "'></button>");
+         this.setButtonImg(i);
+      }
+   },
+   // 현재 레벨에서 해당 스토리버튼이 unlock되어 있는지 검사
+   isLock:function(){
+         if (level >= 27){
+            this.setUnLock(5);
+         } else if (level >= 16){
+            this.setUnLock(4);
+         } else if (level >= 9){
+            this.setUnLock(3);
+         } else if (level >= 4){
+            this.setUnLock(2);
+         }
+   },
+   // buttonNum보다 앞에 있는 버튼 unlock
+   setUnLock:function(buttonNum){
+      for(i = 1; i < buttonNum; i++){
+         isLock[i] = false;
+      }
+   },
+   //비활성화 된 버튼은 흑백이미지, 활성화된 버튼은 컬러 이미지
+   setButtonImg:function(i){
+      var currentBtnId = '#storybutton' + i;
+      if(isLock[i-1] === true){
+         $(currentBtnId).append('<img src="img/whale' + i + '_50px_grey.png">');
+      } else{
+         $(currentBtnId).append('<img src="img/whale' + i + '_50px.png">');
+      }
+   }
+}
 
 $(document).ready(function () {
     $('#story-title').text(name + '의 이야기');
+
+    Button.creatButton(nowhale); // 스토리버튼 생성
+
     $('#storybutton1').click(function () {
         $('#story').text('');
         for (i = 0; i < level && i < 3; i++) {

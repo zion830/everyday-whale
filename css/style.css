@@ -55,7 +55,7 @@ a, a:hover {
     margin-bottom: 15px;
 }
 
-#story-div {
+#story-button-div {
     margin-left: 1em;
     margin-right: 1em;
     text-align: center;
@@ -72,6 +72,7 @@ a, a:hover {
     color: #ffb217;
     text-align: center;
     vertical-align: middle;
+    padding: 3px 0.5px 0 0;
     margin: 0.7%;
 }
 
