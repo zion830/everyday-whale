@@ -52,7 +52,6 @@ $(document).ready(function () {
             });
 
             if (settings.type === 'start') {
-
                 progress_bar.animate({
                     width: percentage
                 }, {
