@@ -34,42 +34,45 @@ var nowhale = 5;  // 고래캐릭터디자인 개수
 var isLock = [false, true, true, true, true];   // 버튼 활성화 여부
 
 var Button = {
-   // 입력한 개수만큼 버튼 생성
-   creatButton:function(numOfButton){
-      this.isLock();
-      for(i = 1; i <= numOfButton; i++){
-         $('#story-button-div').append("<button class='story-button' id='storybutton" + i + "'></button>");
-         this.setButtonImg(i);
-      }
-   },
-   // 현재 레벨에서 해당 스토리버튼이 unlock되어 있는지 검사
-   isLock:function(){
-         if (level >= 27){
+    // 입력한 개수만큼 버튼 생성
+    creatButton: function (numOfButton) {
+        this.isLock();
+        for (i = 1; i <= numOfButton; i++) {
+            $('#story-button-div').append("<button class='story-button' id='storybutton" + i + "'></button>");
+            this.setButtonImg(i);
+        }
+    },
+
+    // 현재 레벨에서 해당 스토리버튼이 unlock되어 있는지 검사
+    isLock: function () {
+        if (level >= 27) {
             this.setUnLock(5);
-         } else if (level >= 16){
+        } else if (level >= 16) {
             this.setUnLock(4);
-         } else if (level >= 9){
+        } else if (level >= 9) {
             this.setUnLock(3);
-         } else if (level >= 4){
+        } else if (level >= 4) {
             this.setUnLock(2);
-         }
-   },
-   // buttonNum보다 앞에 있는 버튼 unlock
-   setUnLock:function(buttonNum){
-      for(i = 1; i < buttonNum; i++){
-         isLock[i] = false;
-      }
-   },
-   //비활성화 된 버튼은 흑백이미지, 활성화된 버튼은 컬러 이미지
-   setButtonImg:function(i){
-      var currentBtnId = '#storybutton' + i;
-      if(isLock[i-1] === true){
-         $(currentBtnId).append('<img src="img/whale' + i + '_50px_grey.png">');
-      } else{
-         $(currentBtnId).append('<img src="img/whale' + i + '_50px.png">');
-      }
-   }
-}
+        }
+    },
+
+    // buttonNum보다 앞에 있는 버튼 unlock
+    setUnLock: function (buttonNum) {
+        for (i = 1; i < buttonNum; i++) {
+            isLock[i] = false;
+        }
+    },
+
+    //비활성화 된 버튼은 흑백이미지, 활성화된 버튼은 컬러 이미지
+    setButtonImg: function (i) {
+        var currentBtnId = '#storybutton' + i;
+        if (isLock[i - 1] === true) {
+            $(currentBtnId).append('<img src="img/whale' + i + '_50px_grey.png">');
+        } else {
+            $(currentBtnId).append('<img src="img/whale' + i + '_50px.png">');
+        }
+    }
+};
 
 $(document).ready(function () {
     $('#story-title').text(name + '의 이야기');
@@ -79,18 +82,19 @@ $(document).ready(function () {
     $('#storybutton1').click(function () {
         $('#story').text('');
         for (i = 0; i < level && i < 3; i++) {
-            $('#story').append('<p class="story-content">' + story[i] + '</p>');
+            $('#story').append('<p class="story-content"><b>#' + (i + 1) + '번째 이야기</b><br>' + story[i] + '</p>');
         }
     });
 
     $('#storybutton2').click(function () {
         $('#story').text('');
         if (level < 4) {
-            $('#story').text('할 일을 완료하고 웨일의 스토리를 모아보세요!');
+            $('#story').html('<p class="not-open"><img src="/img/ic_locked.png" class="story-lock"><br>' +
+                '2단계 성장 시 열리는 스토리입니다.</p>');
         }
         else {
             for (i = 3; i < level && i < 8; i++) {
-                $('#story').append('<p class="story-content">' + story[i] + '</p>');
+                $('#story').append('<p class="story-content"><b>#' + (i + 1) + '번째 이야기</b><br>' + story[i] + '</p>');
             }
         }
     });
@@ -98,10 +102,11 @@ $(document).ready(function () {
     $('#storybutton3').click(function () {
         $('#story').text('');
         if (level < 8) {
-            $('#story').text('할 일을 완료하고 웨일의 스토리를 모아보세요!');
+            $('#story').html('<p class="not-open"><img src="/img/ic_locked.png" class="story-lock"><br>' +
+                '3단계 성장 시 열리는 스토리입니다.</p>');
         } else {
             for (i = 8; i < level && i < 16; i++) {
-                $('#story').append('<p class="story-content">' + story[i] + '</p>');
+                $('#story').append('<p class="story-content"><b>#' + (i + 1) + '번째 이야기</b><br>' + story[i] + '</p>');
             }
         }
     });
@@ -109,10 +114,11 @@ $(document).ready(function () {
     $('#storybutton4').click(function () {
         $('#story').text('');
         if (level < 16) {
-            $('#story').text('할 일을 완료하고 웨일의 스토리를 모아보세요!');
+            $('#story').html('<p class="not-open"><img src="/img/ic_locked.png" class="story-lock"><br>' +
+                '4단계 성장 시 열리는 스토리입니다.</p>');
         } else {
             for (i = 16; i < level && i < 26; i++) {
-                $('#story').append('<p class="story-content">' + story[i] + '</p>');
+                $('#story').append('<p class="story-content"><b>#' + (i + 1) + '번째 이야기</b><br>' + story[i] + '</p>');
             }
         }
     });
@@ -120,7 +126,8 @@ $(document).ready(function () {
     $('#storybutton5').click(function () {
         $('#story').text('');
         if (level < 26) {
-            $('#story').text('할 일을 완료하고 웨일의 스토리를 모아보세요!');
+            $('#story').html('<p class="not-open"><img src="/img/ic_locked.png" class="story-lock"><br>' +
+                '5단계 성장 시 열리는 스토리입니다.</p>');
         } else {
             $('#story').append('<p class="story-content">' + story[26] + '</p>');
         }

@@ -102,6 +102,19 @@ a, a:hover {
     margin: 1em;
 }
 
+.not-open {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1.2em;
+    text-align: center;
+    color: #006689;
+    margin: 1em;
+}
+
+.story-lock {
+    width: 30px;
+    margin-top: 20px;
+}
+
 #whale-name {
     border: 1px solid transparent;
     border-bottom: 1.5px solid #003c72;
@@ -357,7 +370,7 @@ h4 {
     font-size: 1.1em;
 }
 
-.email {
+.info {
     font-family: 'Noto Sans KR', sans-serif;
     color: #003c72;
 }

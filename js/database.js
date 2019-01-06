@@ -35,7 +35,7 @@ $(function () {
         if (todoList[this.id].isChecked)
             finish(this.id);
         else
-            arrayRemove(this.id);
+            removeItem(this.id);
     });
 
     $("#new-to-do").keypress(function (e) {
@@ -62,7 +62,7 @@ function insertData() {
     else {
         var date = new Date();
         var dateStr = date.getFullYear() + '-'
-            + date.getMonth() + '-' + date.getDate();
+            + (date.getMonth() + 1) + '-' + date.getDate();
 
         var todoList;
         try {
@@ -116,7 +116,7 @@ function finish(value) {
 
     var date = new Date();
     var dateStr = date.getFullYear() + '-'
-        + date.getMonth() + '-' + date.getDate();
+        + (date.getMonth() + 1) + '-' + date.getDate();
 
     arr[value].finishDate = dateStr;
     localStorage.setItem("todoList", JSON.stringify(arr));
@@ -126,7 +126,7 @@ function finish(value) {
     location.reload();
 }
 
-function arrayRemove(value) {
+function removeItem(value) {
     var arr = JSON.parse(localStorage["todoList"]);
     arr.splice(value, 1);
 
@@ -187,23 +187,22 @@ function setLevel() {
         exp = ((count % 3) / 3 * 100).toFixed(1) + "%";
         level = Math.floor(count / 3 + 1)
     } else if (count < 34) {
-        exp = ((count % 5) / 5 * 100).toFixed(1) + "%";
+        exp = (((count - 9) % 5) / 5 * 100).toFixed(1) + "%";
         level = 4 + Math.floor((count - 9) / 5);
     } else if (count < 52) {
-        exp = ((count % 6) / 6 * 100).toFixed(1) + "%";
+        exp = (((count - 34) % 6) / 6 * 100).toFixed(1) + "%";
         level = 9 + Math.floor((count - 34) / 6 + 1)
     } else if (count < 108) {
-        exp = ((count % 7) / 7 * 100).toFixed(1) + "%";
+        exp = (((count - 52) % 7) / 7 * 100).toFixed(1) + "%";
         level = 12 + Math.floor((count - 52) / 7 + 1)
     } else if (count < 154) {
-        exp = ((count % 8) / 8 * 100).toFixed(1) + "%";
+        exp = (((count - 108) % 8) / 8 * 100).toFixed(1) + "%";
         level = 20 + Math.floor((count - 108) / 8 + 1)
     } else {
-        level = 27 + Math.floor((count - 162) / 10);
         exp = ((count - 162) / 10 * 100).toFixed(1) + "%";
+        level = 27 + Math.floor((count - 162) / 10);
     }
 
-    console.log(exp + " : 경험치");
     $('.cssProgress-label').text(exp);
     $('.cssProgress-bar').css("width", exp);
 
