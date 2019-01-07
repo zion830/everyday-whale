@@ -25,6 +25,7 @@ $(function () {
         if (check) {
             var todoList = JSON.parse(localStorage["todoList"]);
             todoList[id].isChecked = !todoList[id].isChecked;
+
             localStorage.setItem("todoList", JSON.stringify(todoList));
         }
         check = !check;
@@ -60,10 +61,6 @@ function insertData() {
     if (todo === "")
         alert('할 일을 입력해주세요' + '!');
     else {
-        var date = new Date();
-        var dateStr = date.getFullYear() + '-'
-            + (date.getMonth() + 1) + '-' + date.getDate();
-
         var todoList;
         try {
             todoList = JSON.parse(localStorage["todoList"]);
@@ -71,7 +68,7 @@ function insertData() {
             todoList = new Array();
         }
 
-        var newItem = new Todo(todoList.length, todo, false, dateStr, null);
+        var newItem = new Todo(todoList.length, todo, false, getDateStr(), null);
         todoList.push(newItem);
         localStorage.setItem("todoList", JSON.stringify(todoList));
         location.reload();
@@ -87,16 +84,19 @@ function initList() {
         $('#list-msg').text('');
         var start = '<li><label class="container" id="todo-';
         var start2 = '">';
-        var checkEnd = '<input type="checkbox" checked="checked"><span class="checkmark"></span></label><input type="button" class="btn-finish" id="';
-        var unCheckedEnd = '</span><input type="checkbox"><span class="checkmark"></span></label><input type="button" class="btn-finish" id="';
+        var checkEnd = '<input type="checkbox" checked="checked"><span class="checkmark"></span></label>' +
+            '<input type="button" class="btn-finish" id="';
+        var unCheckedEnd = '</span><input type="checkbox"><span class="checkmark"></span></label>' +
+            '<input type="button" class="btn-finish" id="';
         var end = '"></li>';
 
         todoList.forEach(value => {
-            if (value.isChecked && value.finishDate === null)
+            if (value.isChecked && value.finishDate === null) {
                 str += start + id + start2 + value.todo + checkEnd + id + end;
-            else if (!value.isChecked && value.finishDate === null)
+            }
+            else if (!value.isChecked && value.finishDate === null) {
                 str += start + id + start2 + value.todo + unCheckedEnd + id + end;
-
+            }
             id++;
         });
     } catch (e) {
@@ -114,11 +114,7 @@ function initList() {
 function finish(value) {
     var arr = JSON.parse(localStorage["todoList"]);
 
-    var date = new Date();
-    var dateStr = date.getFullYear() + '-'
-        + (date.getMonth() + 1) + '-' + date.getDate();
-
-    arr[value].finishDate = dateStr;
+    arr[value].finishDate = getDateStr();
     localStorage.setItem("todoList", JSON.stringify(arr));
     localStorage.setItem("sumCount", Number(localStorage.getItem("sumCount")) + 1);
 
@@ -191,13 +187,13 @@ function setLevel() {
         level = 4 + Math.floor((count - 9) / 5);
     } else if (count < 52) {
         exp = (((count - 34) % 6) / 6 * 100).toFixed(1) + "%";
-        level = 9 + Math.floor((count - 34) / 6 + 1)
+        level = 9 + Math.floor((count - 34) / 6)
     } else if (count < 108) {
         exp = (((count - 52) % 7) / 7 * 100).toFixed(1) + "%";
-        level = 12 + Math.floor((count - 52) / 7 + 1)
+        level = 12 + Math.floor((count - 52) / 7)
     } else if (count < 154) {
         exp = (((count - 108) % 8) / 8 * 100).toFixed(1) + "%";
-        level = 20 + Math.floor((count - 108) / 8 + 1)
+        level = 20 + Math.floor((count - 108) / 8)
     } else {
         exp = ((count - 162) / 10 * 100).toFixed(1) + "%";
         level = 27 + Math.floor((count - 162) / 10);
@@ -208,4 +204,12 @@ function setLevel() {
 
     localStorage.setItem("level", level);
     localStorage.setItem("exp", exp);
+}
+
+function getDateStr() {
+    var date = new Date();
+    var dateStr = date.getFullYear() + '-'
+        + (date.getMonth() + 1) + '-' + date.getDate();
+
+    return dateStr;
 }

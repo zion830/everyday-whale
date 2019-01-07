@@ -233,15 +233,16 @@ li {
 }
 
 .btn-finish {
-    float: right;
+    right: 0;
     display: inline-block;
-    background-image: url("../img/close.png");
+    position: absolute;
+    background-image: url("../img/ic_close.png");
     background-size: 15px;
     vertical-align: middle;
     background-color: transparent;
     margin-top: 5px;
+    margin-right: 40px;
     padding-right: 16px;
-    padding-bottom: 5px;
     background-repeat: no-repeat;
     border: none;
     cursor: pointer;
@@ -272,6 +273,7 @@ li {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    margin-right: 30px;
 }
 
 input[type="checkbox"] {
@@ -313,6 +315,11 @@ input[type="checkbox"] {
 }
 
 /* 설정 */
+.wave-back {
+    background: white url("../img/back_wave.png") no-repeat;
+    background-size: 590px auto;
+}
+
 #btn-back {
     width: 30px;
     margin: 15px;
@@ -397,7 +404,7 @@ h4 {
     color: #f44186;
 }
 
-#finish-msg {
+#no-item-msg {
     color: #ff70a7;
 }
 
@@ -409,4 +416,21 @@ h4 {
 .finish-item {
     word-wrap: break-word;
     display: block;
+}
+
+#pages {
+    margin: 15px;
+    font-size: 1.7em;
+}
+
+.page-text {
+    color: #003c72;
+}
+
+.page-text:hover {
+    color: #3798D9;
+}
+
+b {
+    font-weight: bolder;
 }
