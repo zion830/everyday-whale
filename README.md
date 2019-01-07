@@ -28,6 +28,12 @@
     - 확장앱 배포
 - version 1.0.1
     - 입력창에서 Enter를 누르면 바로 할 일이 추가되도록 변경.
+- version 1.0.2
+    - 웨일 탭에 경험치바 추가.
+    - 할 일 탭에서 월이 잘못 표시되던 오류 수정.
+    - 할 일 탭에서 할 일이 10개 단위로 표시되도록 변경.
+    - 할 일 탭에서 할 일이 길게 작성되었을 경우 레이아웃이 깨지던 오류 수정.
+    - 웨일 탭 스토리 UI 변경.
 
 ### 설치
 [웨일 스토어](https://store.whale.naver.com/detail/ndgnjaejoolgddacffkjiljhjlnladjl)
