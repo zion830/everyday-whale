@@ -18,7 +18,7 @@ h3 {
     text-align: center;
     color: #296e81;
     font-size: 1.8em;
-    padding-top: 10%;
+    padding-top: 8%;
 }
 
 a, a:hover {
@@ -72,8 +72,9 @@ a, a:hover {
     color: #ffb217;
     text-align: center;
     vertical-align: middle;
-    padding: 3px 0.5px 0 0;
+    padding: 3px 0 0 0;
     margin: 0.7%;
+    cursor: pointer;
 }
 
 #heart {
@@ -224,7 +225,7 @@ li {
     margin-right: 5px;
 }
 
-#new-to-do {
+#input-to-do {
     font-family: 'Noto Sans KR', sans-serif;
     background: #00000000;
     border: none;
@@ -258,6 +259,17 @@ li {
     padding-right: 20px;
     padding-bottom: 10px;
     background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-edit {
+    font-family: 'Noto Sans KR', sans-serif;
+    display: inline-block;
+    color: white;
+    background-color: #003c72;
+    border-radius: 10px;
+    font-size: x-small;
     border: none;
     cursor: pointer;
 }
@@ -324,7 +336,16 @@ input[type="checkbox"] {
     width: 30px;
     margin: 15px;
     display: block;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+#btn-back-fix {
+    width: 30px;
     position: fixed;
+    margin: 15px;
+    display: block;
     top: 0;
     left: 0;
     z-index: 1;
@@ -332,7 +353,6 @@ input[type="checkbox"] {
 
 #setting-main {
     text-align: center;
-    margin-top: 35px;
 }
 
 .setting-title {
@@ -396,10 +416,6 @@ h4 {
 }
 
 /* 할일 */
-#count-title {
-    margin-top: 1.5em;
-}
-
 #count {
     color: #f44186;
 }

@@ -10,7 +10,17 @@ $(function () {
     const status = getStatus(level);
 
     $('.whale-info').text('Lv.' + level + ' ' + name);
-    $('.whale-info2').text('Lv.' + level + " " + name);
+    $('.whale-info2').html('Lv.' + level + " " + name + ' <span><input type="button" value="이름 변경" class="btn-edit"></span>');
+    $('.btn-edit').click(function () {
+        var newName = prompt('새로운 이름을 지어주세요!', name);
+        if (newName.length > 0) {
+            localStorage.setItem("name", newName);
+            location.reload(true);
+        }
+        else
+            alert("1자 이상의 이름을 지어주세요.");
+    });
+
     setLevel();
     setWhale(status);
     initList();
@@ -39,7 +49,7 @@ $(function () {
             removeItem(this.id);
     });
 
-    $("#new-to-do").keypress(function (e) {
+    $("#input-to-do").keypress(function (e) {
         if (e.which == 13) {
             insertData();
         }
@@ -57,7 +67,7 @@ class Todo {
 }
 
 function insertData() {
-    var todo = $('#new-to-do').val();
+    var todo = $('#input-to-do').val();
     if (todo === "")
         alert('할 일을 입력해주세요' + '!');
     else {
@@ -104,7 +114,7 @@ function initList() {
     }
 
     str += '<li>\n' +
-        '        <input type="text" placeholder="새로운 할 일" id="new-to-do">\n' +
+        '        <input type="text" placeholder="새로운 할 일" id="input-to-do">\n' +
         '        <input type="button" id="add-to-do" class="btn-add">\n' +
         '    </li></ul>';
 
