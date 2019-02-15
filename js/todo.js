@@ -1,5 +1,11 @@
 window.onload = function () {
-    var todoList = JSON.parse(localStorage["todoList"]);
+    var todoList;
+
+    try {
+        todoList = JSON.parse(localStorage["todoList"]);
+    } catch (e) {
+        todoList = {}
+    }
 
     var str = '<ul class="todo-list">';
     var idx = 0;
@@ -23,7 +29,6 @@ window.onload = function () {
                         str += value.finishDate + '</span></li>';
                     else
                         str += getDateStr() + '*' + '</span></li>';
-
                 }
                 idx++;
                 console.log(value.todo);
@@ -31,6 +36,8 @@ window.onload = function () {
         });
 
         $('#count').text(idx + "개");
+        if (idx === 0)
+            $('#no-item-msg').text("완료된 할 일이 이곳에 표시됩니다!");
     } else {
         $('#no-item-msg').text("완료된 할 일이 이곳에 표시됩니다!");
     }
@@ -53,8 +60,7 @@ window.onload = function () {
 
 function getDateStr() {
     var date = new Date();
-    var dateStr = date.getFullYear() + '-'
-        + (date.getMonth() + 1) + '-' + date.getDate();
+    var dateStr = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
 
     return dateStr;
 }
