@@ -1,4 +1,8 @@
 $(function () {
+    setTimeout(function () {
+        $("#input-to-do").focus();
+    });
+
     // 이름이 없을 경우 시작 페이지로
     if (localStorage.getItem("name") === null) {
         history.replaceState({}, "start", "start.html");
@@ -50,7 +54,7 @@ $(function () {
     });
 
     $("#input-to-do").keypress(function (e) {
-        if (e.which == 13) {
+        if (e.which === 13) {
             insertData();
         }
     });
@@ -69,7 +73,7 @@ class Todo {
 function insertData() {
     var todo = $('#input-to-do').val();
     if (todo === "")
-        alert('할 일을 입력해주세요' + '!');
+        alert('할 일을 입력해주세요!');
     else {
         var todoList;
         try {
@@ -147,29 +151,10 @@ function removeItem(value) {
 }
 
 function setWhale(status) {
-    switch (status) {
-        case 1:
-            $('#whale-main').attr("src", "/img/whale1.gif");
-            $('#whale-whalepage').attr("src", "/img/whale1.gif");
-            break;
-        case 2:
-            $('#whale-main').attr("src", "/img/whale2.gif");
-            $('#whale-whalepage').attr("src", "/img/whale2.gif");
-            break;
-        case 3:
-            $('#whale-main').attr("src", "/img/whale3.gif");
-            $('#whale-whalepage').attr("src", "/img/whale3.gif");
-            break;
-        case 4:
-            $('#whale-main').attr("src", "/img/whale4.gif");
-            $('#whale-whalepage').attr("src", "/img/whale4.gif");
-            break;
-        case 5:
-            $('#whale-main').attr("src", "/img/whale5.gif");
-            $('#whale-whalepage').attr("src", "/img/whale5.gif");
-            break;
+    let imgStr = `/img/whale${status}.gif`;
 
-    }
+    $('#whale-main').attr("src", imgStr);
+    $('#whale-whalepage').attr("src", imgStr);
 }
 
 function getStatus(level) {

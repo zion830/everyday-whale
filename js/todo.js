@@ -45,7 +45,7 @@ window.onload = function () {
     $('#finish-list').html(str);
 
     str = "";
-    var totalPage = idx / 10;
+    let totalPage = idx / 10;
 
     for (let i = 0; i < totalPage; i++) {
         if (i === pageNum)
@@ -55,7 +55,7 @@ window.onload = function () {
     }
 
     if (idx > 10)
-        $('#pages').html(str)
+        $('#pages').html(str);
 };
 
 function getDateStr() {
