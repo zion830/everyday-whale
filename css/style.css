@@ -450,3 +450,39 @@ h4 {
 b {
     font-weight: bolder;
 }
+
+/* 새 탭 */
+.clock-back {
+    background-image: url("../img/tab_bg.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    font-size: 3em;
+    text-align: center;
+}
+
+.clock {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 10%;
+    margin: auto;
+    padding-bottom: 13%;
+}
+
+.clock > h1 {
+    font-family: 'Noto Sans KR', sans-serif;
+    line-height: 0.95em;
+    color: white;
+}
+
+.datetime {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 0.35em;
+}
+
+.date {
+    font-size: 0.4em;
+}
