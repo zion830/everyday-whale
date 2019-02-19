@@ -359,6 +359,11 @@ input[type="checkbox"] {
     color: #003c72;
 }
 
+.setting-title-left {
+    color: #003c72;
+    float: left;
+}
+
 .setting-des {
     color: #19aac1;
     font-size: 1.1em;
@@ -372,6 +377,11 @@ hr {
 .link {
     margin-top: 1em;
     text-align: center;
+}
+
+.setting-new-tab {
+    margin: 10px 40px;
+    text-align: left;
 }
 
 .btn-clear {
