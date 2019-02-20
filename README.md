@@ -36,8 +36,12 @@
     - 할 일 탭에서 할 일이 길게 작성되었을 경우 레이아웃이 깨지던 오류 수정.
     - 웨일 탭 스토리 UI 변경.
  - version 1.0.3 
-    - 고래의 이름 수정 기능 추가
+    - 고래의 이름 수정 기능 추가.
     - 화살표 아이콘 색상 변경.
+ - version 1.0.4
+    - 최초 focus를 할 일 입력칸에 할당.
+    - 설정 탭에 숨바꼭질 on/off 기능 추가.
+    - 새 탭에서 시계와 아기고래가 표시되는 기능 추가.
 
 ### 설치
 [웨일 스토어](https://store.whale.naver.com/detail/ndgnjaejoolgddacffkjiljhjlnladjl)

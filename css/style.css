@@ -434,7 +434,7 @@ h4 {
     color: #ff70a7;
 }
 
-.date {
+.period {
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 0.8em;
 }
@@ -494,5 +494,6 @@ b {
 }
 
 .date {
+    font-family: 'Noto Sans KR', sans-serif;
     font-size: 0.4em;
 }
