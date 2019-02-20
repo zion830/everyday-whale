@@ -20,8 +20,7 @@
     "128": "img/ic_big.png"
   },
   "background": {
-    "scripts": [
-      "/js/jquery-3.3.1.min.js"
-    ]
+    "scripts": ["js/newtab.js"],
+    "persistent": false
   }
 }

@@ -22,7 +22,7 @@ window.onload = function () {
             if (value.finishDate != null || value.isChecked) {
                 if (startIdx++ >= start && endIdx++ < end) { // 한 페이지에 10개 씩
                     str += '<li class="finish-item">' + value.todo
-                        + '<br><span class="date">진행기간 | ' +
+                        + '<br><span class="period">진행기간 | ' +
                         value.addDate + " ~ ";
 
                     if (value.finishDate != null)

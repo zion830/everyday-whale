@@ -18,6 +18,7 @@ function getTime() {
     let period = '<span class="datetime">오전</span>';
 
     if (hours >= 12) {
+        hours = hours - 12;
         period = '<span class="datetime">오후</span>';
     }
 
