@@ -18,9 +18,5 @@
     "16": "img/ic_whale.png",
     "48": "img/ic_big.png",
     "128": "img/ic_big.png"
-  },
-  "background": {
-    "scripts": ["js/newtab.js"],
-    "persistent": false
   }
 }

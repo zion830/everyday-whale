@@ -6,25 +6,15 @@ function clearData() {
         localStorage.removeItem("level");
         localStorage.removeItem("sumCount");
         localStorage.removeItem("todoList");
+        localStorage.removeItem("tabStatus");
 
         history.replaceState({}, "main", "start.html");
         location.reload();
     }
 }
 
-const toggleSwitch = $('#ckbx-style-8-1');
-
-function toggleOnClicked() {
-    toggleSwitch.val(toggleSwitch.val() != 0 ? 0 : 1);
-    localStorage.setItem("tab_status", toggleSwitch.val());
-}
-
 $(function () {
     $('.btn-clear').click(function () {
         clearData();
     });
-
-    toggleSwitch.click(function () {
-        toggleOnClicked();
-    })
 });
