@@ -22,7 +22,7 @@ $(function () {
             location.reload(true);
         }
         else
-            alert("1자 이상의 이름을 지어주세요.");
+            alert("1자 이상의 이름을 지어주세요.\n이름 없는 고래가 되면 슬프잖아요.");
     });
 
     setLevel();
@@ -39,9 +39,11 @@ $(function () {
         if (check) {
             var todoList = JSON.parse(localStorage["todoList"]);
             todoList[id].isChecked = !todoList[id].isChecked;
-
             localStorage.setItem("todoList", JSON.stringify(todoList));
+
+            setItemLineThrough(id, todoList[id].isChecked);
         }
+
         check = !check;
     });
 
@@ -93,26 +95,31 @@ function initList() {
     var str = '<ul class="todo-list">';
 
     try {
-        var todoList = JSON.parse(localStorage["todoList"]);
         var id = 0;
         $('#list-msg').text('');
-        var start = '<li><label class="container" id="todo-';
-        var start2 = '">';
-        var checkEnd = '<input type="checkbox" checked="checked"><span class="checkmark"></span></label>' +
+        const todoList = JSON.parse(localStorage["todoList"]);
+
+        const start = '<li><label class="container" id="todo-';
+        const start2 = '">';
+        const checkEnd = '<input type="checkbox" checked="checked"><span class="checkmark"></span></label>' +
             '<input type="button" class="btn-finish" id="';
-        var unCheckedEnd = '</span><input type="checkbox"><span class="checkmark"></span></label>' +
+        const unCheckedEnd = '</span><input type="checkbox"><span class="checkmark"></span></label>' +
             '<input type="button" class="btn-finish" id="';
-        var end = '"></li>';
+        const end = '"></li>';
 
         todoList.forEach(value => {
+            console.log(value.isChecked);
             if (value.isChecked && value.finishDate === null) {
-                str += start + id + start2 + value.todo + checkEnd + id + end;
+                str += start + id + start2 + "<span class=\"todo-text\" id=\"todo-text-" + id + "\">"
+                    + value.todo + "</span>" + checkEnd + id + end;
             }
             else if (!value.isChecked && value.finishDate === null) {
-                str += start + id + start2 + value.todo + unCheckedEnd + id + end;
+                str += start + id + start2 + "<span class=\"todo-text\" id=\"todo-text-" + id + "\">"
+                    + value.todo + "</span>" + unCheckedEnd + id + end;
             }
             id++;
         });
+
     } catch (e) {
         $('#list-msg').text('첫 번째 할 일을 추가해보세요!');
     }
@@ -122,7 +129,31 @@ function initList() {
         '        <input type="button" id="add-to-do" class="btn-add">\n' +
         '    </li></ul>';
 
-    $('#todo-list').html(str)
+    $('#todo-list').html(str);
+
+    setLineThrough();
+}
+
+function setLineThrough() {
+    let id = 0;
+    try {
+        const todoList = JSON.parse(localStorage["todoList"]);
+
+        todoList.forEach(value => {
+            if (value.isChecked && value.finishDate === null) {
+                $(`#todo-text-${id}`).css("text-decoration", "line-through");
+            } else if (!value.isChecked && value.finishDate === null) {
+                $(`#todo-text-${id}`).css("text-decoration", "none");
+            }
+
+            id++;
+        });
+    } catch (e) {
+    }
+}
+
+function setItemLineThrough(id, status) {
+    $(`#todo-text-${id}`).css("text-decoration", status ? "line-through" : "none");
 }
 
 function finish(value) {
