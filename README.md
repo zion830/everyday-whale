@@ -40,8 +40,7 @@
     - 화살표 아이콘 색상 변경.
  - version 1.0.4
     - 최초 focus를 할 일 입력칸에 할당.
-    - 설정 탭에 숨바꼭질 on/off 기능 추가.
-    - 새 탭에서 시계와 아기고래가 표시되는 기능 추가.
+    - 체크박스가 체크되었을 때 취소선이 나타나도록 변경.
 
 ### 설치
 [웨일 스토어](https://store.whale.naver.com/detail/ndgnjaejoolgddacffkjiljhjlnladjl)

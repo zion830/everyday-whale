@@ -211,13 +211,17 @@ a, a:hover {
 }
 
 li {
-    font-family: 'Noto Sans KR', sans-serif;
     padding: 0.5em 0.7em;
     margin-bottom: 10px;
     background: #f2f7ff;
     color: #003c72;
     border-radius: 0.5em;
     border: 1.5px solid #003c72;
+}
+
+.todo-text {
+    font-family: 'Noto Sans KR', sans-serif;
+    text-decoration: none;
 }
 
 .checkbox {
