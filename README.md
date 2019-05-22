@@ -41,6 +41,9 @@
  - version 1.0.4
     - 최초 focus를 할 일 입력칸에 할당.
     - 체크박스가 체크되었을 때 취소선이 나타나도록 변경.
-
+ - version 1.0.5 (예정)
+    - 설정에서 하이퍼링크 제거.
+    - 완료한 할일 목록 인덱싱 오류 .
+    
 ### 설치
 [웨일 스토어](https://store.whale.naver.com/detail/ndgnjaejoolgddacffkjiljhjlnladjl)
