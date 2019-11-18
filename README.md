@@ -48,6 +48,7 @@
  - version 1.0.6 (예정)
     - jquery 제거
     - 배경 테마 변경 기능 추가
+    - 엑셀로 내보내기 기능 
     
 ### 설치
 [웨일 스토어](https://store.whale.naver.com/detail/ndgnjaejoolgddacffkjiljhjlnladjl)
