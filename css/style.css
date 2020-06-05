@@ -134,9 +134,10 @@ a, a:hover {
     animation: swing 3s ease-in-out infinite;
 }
 
-#name-msg {
-    color: red;
-    margin: 1em;
+.error-msg {
+  font-size: medium;
+  color: red;
+  margin: 1em;
 }
 
 /*메인 페이지*/

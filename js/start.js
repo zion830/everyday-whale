@@ -1,20 +1,28 @@
+// 웨일 캐릭터 이름 설정
 function setName() {
-    const name = $('#whale-name').val();
-    console.log("이름");
-    console.log(name);
+  
+  const name = document.querySelector('#whale-name').value
 
-    if (name.length === 0) {
-        $('#name-msg').text("웨일의 이름을 입력해주세요!");
-    }
-    else {
-        localStorage.setItem("name", name);
-        localStorage.setItem("level", 1);
-        localStorage.setItem("sumCount", 0);
-        history.replaceState({}, "main", "index.html");
-        location.reload();
-    }
+  if (name.length === 0) {
+    
+    const target = document.querySelector('#btn-start')
+    const msg = `<p class="error-msg">웨일의 이름을 입력해주세요!</p>`
+
+    target.insertAdjacentHTML('afterend', msg)
+
+  } else {
+    localStorage.setItem("name", name)
+    localStorage.setItem("level", 1)
+    localStorage.setItem("sumCount", 0)
+    history.replaceState({}, "main", "index.html")
+    location.reload()
+  }
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById("btn-start").addEventListener("click", setName);
-});
+  document.getElementById('btn-start').addEventListener('click', setName)
+})
+
+document.querySelector('#whale-name').addEventListener('keypress', function(e) {
+  if(e.keyCode === 13) setName()
+})
