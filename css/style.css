@@ -16,6 +16,7 @@
 
 h1 {
   font-size: 1.8em;
+  padding: 0 1em;
 }
 
 .text-blue {
@@ -29,6 +30,10 @@ a, a:hover {
 
 .fixed {
 position: fixed;
+}
+
+.padding-large {
+  padding: 30px;
 }
 
 /*시작 페이지*/
@@ -129,7 +134,7 @@ position: fixed;
 }
 
 .btn-submit:hover {
-  color: #d8ecff;
+  background-color: #006689;
 }
 
 #whale-start {
@@ -201,6 +206,11 @@ margin: 1em;
   text-shadow: 1px 1px 0 white,
   -1px -1px 0 white, 1px -1px 0 white,
   -1px 1px 0 white, 1px 1px 0 white;
+}
+
+#list-msg {
+  font-size: 1.2em;
+  margin-top: 1em;
 }
 
 .todo-list {
