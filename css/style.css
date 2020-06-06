@@ -65,26 +65,25 @@ position: fixed;
   margin-bottom: 15px;
 }
 
-#story-button-div {
+#story-btn-container {
   margin-left: 1em;
   margin-right: 1em;
   text-align: center;
 }
 
-.story-button {
+.story-btn {
   border: 2px solid #006689;
   border-radius: 8px;
   background-color: white;
   width: 60px;
   height: 60px;
   display: inline-block;
-  font-size: 4em;
-  color: #ffb217;
   text-align: center;
   vertical-align: middle;
   padding: 3px 0 0 0;
   margin: 0.7%;
   cursor: pointer;
+  overflow: hidden;
 }
 
 #heart {
@@ -106,7 +105,7 @@ position: fixed;
   margin-top: 10px;
 }
 
-.story-content, #story {
+.story-content, #story-container {
   font-family: 'Noto Sans KR', sans-serif;
   font-size: 1.2em;
   color: #006689;
