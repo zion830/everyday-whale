@@ -86,9 +86,9 @@ position: fixed;
   overflow: hidden;
 }
 
-#heart {
+.heart {
   width: 0.7em;
-  margin: 4px 8px;
+  margin: 4px;
   display: inline;
 }
 
