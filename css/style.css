@@ -247,6 +247,10 @@ li {
   font-size: 1.0em;
 }
 
+#input-to-do:focus {
+  outline-color: transparent;
+}
+
 .btn-finish {
   right: 0;
   display: inline-block;
