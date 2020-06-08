@@ -432,6 +432,8 @@ h4 {
 
 #no-item-msg {
   color: #ff70a7;
+  font-size: medium;
+  margin-top: 1.5em;
 }
 
 .period {

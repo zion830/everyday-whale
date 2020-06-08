@@ -9,10 +9,11 @@ class CompletedTodo {
     this.noTodoPerPage = 10
     this.pageNum = Math.ceil(this.completedTodoData.length / this.noTodoPerPage)
 
-    this.renderCompletedTodoNum()
-    this.renderPageNum()
-    this.renderCompletedTodo(1)
-    this.pageEventHandler()
+    if(this.renderCompletedTodoNum() !== "no-item") {
+      this.renderPageNum()
+      this.renderCompletedTodo(1)
+      this.pageEventHandler()
+    }
   }
   
   getCompletedTodoData() {
@@ -28,8 +29,15 @@ class CompletedTodo {
   }
 
   renderCompletedTodoNum() {
-    const target = document.querySelector('#count')
-    target.insertAdjacentHTML('beforeend', `${this.completedTodoData.length}개`)
+    const noCompletedTodo = this.completedTodoData.length
+    document.querySelector('#count').insertAdjacentHTML('beforeend', `${noCompletedTodo}개`)
+
+    if(noCompletedTodo === 0) {
+      const noItemMsg = document.createTextNode("아직 완료된 할 일이 없습니다!")
+      document.querySelector('#no-item-msg').appendChild(noItemMsg)
+
+      return "no-item"
+    }
   }
 
   renderPageNum() {
