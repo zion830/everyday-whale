@@ -6,7 +6,7 @@ class CompletedTodo {
 
   constructor() {
     this.completedTodoData = this.getCompletedTodoData()
-    console.log(this.completedTodoData)
+
     if(this.renderCompletedTodoNum() !== "no-item") {
       this.completedTodoData = this.completedTodoData.reverse()
       this.noTodoPerPage = 10
@@ -73,10 +73,11 @@ class CompletedTodo {
 
     let todoHTML = ``
     const todoLength = this.completedTodoData.length
+    const renderStartTodoIndex = this.noTodoPerPage * (pageNum - 1)
     
-    for (let i = 0; i < this.noTodoPerPage && (this.noTodoPerPage * (pageNum - 1)) + i < todoLength; i++) {
+    for (let i = 0; i < this.noTodoPerPage && renderStartTodoIndex + i < todoLength; i++) {
 
-      const data = this.completedTodoData[(this.noTodoPerPage * (pageNum - 1)) + i]
+      const data = this.completedTodoData[renderStartTodoIndex + i]
 
       todoHTML += `
         <li class="finish-item">
