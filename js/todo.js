@@ -1,66 +1,106 @@
-window.onload = function () {
-    let todoList;
+document.addEventListener('DOMContentLoaded', (event) => {
+  const todo = new CompletedTodo()
+})
 
+class CompletedTodo {
+
+  constructor() {
+    this.completedTodoData = this.getCompletedTodoData().reverse()
+    this.noTodoPerPage = 10
+    this.pageNum = Math.ceil(this.completedTodoData.length / this.noTodoPerPage)
+
+    this.renderCompletedTodoNum()
+    this.renderPageNum()
+    this.renderCompletedTodo(1)
+    this.pageEventHandler()
+  }
+  
+  getCompletedTodoData() {
     try {
-        todoList = JSON.parse(localStorage["todoList"]);
+      const todoData = JSON.parse(localStorage["todoList"])
+      const completedTodoData = todoData.filter( data => data.isChecked )
+  
+      return completedTodoData
+  
     } catch (e) {
-        todoList = {}
+      return null
+    }
+  }
+
+  renderCompletedTodoNum() {
+    const target = document.querySelector('#count')
+    target.insertAdjacentHTML('beforeend', `${this.completedTodoData.length}개`)
+  }
+
+  renderPageNum() {
+
+    const target = document.querySelector('#pages')
+    let pageHTML = ``
+    let i = 0
+
+    while(i < this.pageNum) {
+      pageHTML += `<input type="button" id="page${i + 1}" class="page-num" value="${i + 1}" />`
+      i++
     }
 
-    let str = '<ul class="todo-list">';
-    let idx = 0;
-    const pageNum = Number(location.href.substr(location.href.lastIndexOf('=') + 1));
+    target.insertAdjacentHTML('beforeend', pageHTML)
+  }
 
-    if (todoList.length > 0) {
-        todoList.reverse();
+  pageEventHandler() {
 
-        const start = pageNum * 10;
-        const end = start + 10;
-        let startIdx = 0, endIdx = 0;
+    const pageButtonContainer = document.querySelector('#pages')
 
-        todoList.forEach(value => {
-            if (value.finishDate != null || value.isChecked) {
-                if (startIdx >= start && endIdx < end) { // 한 페이지에 10개 씩
-                    str += '<li class="finish-item">' + value.todo
-                        + '<br><span class="period">진행기간 | ' +
-                        value.addDate + " ~ ";
+    pageButtonContainer.addEventListener('click', (event) => {
+      if(event.target.tagName === "INPUT") {
+        this.renderCompletedTodo(event.target.value)
+      }
+    })
+  }
 
-                    if (value.finishDate != null)
-                        str += value.finishDate + '</span></li>';
-                    else
-                        str += getDateStr() + '*' + '</span></li>';
-                }
-                idx++;
-                startIdx++;
-                endIdx++;
-            }
-        });
+  renderCompletedTodo(pageNum) {
+    
+    this.focusPageNum(pageNum)
 
-        $('#count').text(idx + "개");
-        if (idx === 0)
-            $('#no-item-msg').text("완료된 할 일이 이곳에 표시됩니다!");
-    } else {
-        $('#no-item-msg').text("완료된 할 일이 이곳에 표시됩니다!");
+    let todoHTML = ``
+    const todoLength = this.completedTodoData.length
+    
+    for (let i = 0; i < this.noTodoPerPage && (this.noTodoPerPage * (pageNum - 1)) + i < todoLength; i++) {
+
+      const data = this.completedTodoData[(this.noTodoPerPage * (pageNum - 1)) + i]
+
+      todoHTML += `
+        <li class="finish-item">
+        ${data.todo}<br>
+        <span class="period">
+          진행기간 | ${data.addDate} ~ ${(data.finishDate === null) ? (this.getDateStr() + "*") : data.finishDate}
+      `
     }
 
-    str += '</ul>';
-    $('#finish-list').html(str);
+    const target = document.querySelector('#completed-todo-list')
+    this.removeChildAll(target)
+    target.insertAdjacentHTML('afterbegin', todoHTML)
+  }
 
-    str = "";
-    let totalPage = idx / 10;
+  focusPageNum(pageNum) {
+    const pageNumbers = document.querySelectorAll('.page-num')
 
-    for (let i = 0; i < totalPage; i++) {
-        if (i === pageNum)
-            str += '<b>' + (i + 1) + '</b> ';
-        else
-            str += '<a class="page-text" href="../todo.html?index=' + i + '">' + (i + 1) + '</a> ';
+    pageNumbers.forEach( num => {
+      num.className = num.className.replace(' selected-page-num', '')
+    })
+
+    const target = document.querySelector(`#page${pageNum}`)
+    target.className += ' selected-page-num'
+  }
+
+  removeChildAll(parent) {
+    while(parent.firstChild) {
+      parent.removeChild(parent.lastChild)
     }
+  }
 
-    if (idx > 10)
-        $('#pages').html(str);
-};
+  getDateStr() {
+    const date = new Date()
+    return `${date.getFullYear()}-${(date.getMonth() + 1)}-${date.getDate()}`
+  }
 
-function getDateStr() {
-    const date = new Date();
-    return date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
 }

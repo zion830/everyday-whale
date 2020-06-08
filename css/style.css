@@ -446,15 +446,29 @@ h4 {
 
 #pages {
   margin: 15px;
-  font-size: 1.7em;
+  font-size: 1.8em;
 }
 
-.page-text {
+.page-num {
   color: #003c72;
+  background-color: transparent;
+  border: none;
+  margin: 0 3px;
+  cursor: pointer;
 }
 
-.page-text:hover {
+.page-num:hover {
   color: #3798D9;
+}
+
+.page-num:focus {
+  outline-color: transparent;
+}
+
+.selected-page-num {
+  font-size: medium;
+  color: black;
+  cursor: default;
 }
 
 b {
