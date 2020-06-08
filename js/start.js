@@ -24,5 +24,6 @@ document.addEventListener('DOMContentLoaded', function() {
 })
 
 document.querySelector('#whale-name').addEventListener('keypress', function(e) {
+  // 엔터로 이름 입력 완료
   if(e.keyCode === 13) setName()
 })
