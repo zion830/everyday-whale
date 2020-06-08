@@ -5,11 +5,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
 class CompletedTodo {
 
   constructor() {
-    this.completedTodoData = this.getCompletedTodoData().reverse()
-    this.noTodoPerPage = 10
-    this.pageNum = Math.ceil(this.completedTodoData.length / this.noTodoPerPage)
-
+    this.completedTodoData = this.getCompletedTodoData()
+    console.log(this.completedTodoData)
     if(this.renderCompletedTodoNum() !== "no-item") {
+      this.completedTodoData = this.completedTodoData.reverse()
+      this.noTodoPerPage = 10
+      this.pageNum = Math.ceil(this.completedTodoData.length / this.noTodoPerPage)
+
       this.renderPageNum()
       this.renderCompletedTodo(1)
       this.pageEventHandler()
@@ -29,10 +31,10 @@ class CompletedTodo {
   }
 
   renderCompletedTodoNum() {
-    const noCompletedTodo = this.completedTodoData.length
-    document.querySelector('#count').insertAdjacentHTML('beforeend', `${noCompletedTodo}개`)
-
-    if(noCompletedTodo === 0) {
+    document.querySelector('#count').insertAdjacentHTML('beforeend', 
+      `${(this.completedTodoData === null) ? "0" : this.completedTodoData.length}개`)
+    
+    if(this.completedTodoData === null || this.completedTodoData.length === 0) {
       const noItemMsg = document.createTextNode("아직 완료된 할 일이 없습니다!")
       document.querySelector('#no-item-msg').appendChild(noItemMsg)
 
