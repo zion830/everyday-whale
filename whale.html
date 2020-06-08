@@ -1,40 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>매일웨일</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/cssprogress.min.css">
+  <meta charset="UTF-8">
+  <title>매일웨일</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/cssprogress.min.css">
 </head>
 <body class="body-whale">
-<div class="body-center">
-    <a href="index.html"><img src="img/ic_back.png" alt="뒤로가기" id="btn-back-fix"></a>
+  <div class="body-center">
+    <a href="index.html"><img src="img/ic_back.png" alt="뒤로가기" class="btn-back fixed"></a>
 
     <img src="img/whale1.gif" alt="웨일 이미지" id="whale-whalepage">
     <p class="whale-info2"></p>
-</div>
+  </div>
 
-<div class="cssProgress">
+  <div class="cssProgress">
     <div class="progress2">
-        <div class="cssProgress-bar">
-            <span class="cssProgress-label"></span>
-        </div>
+      <div class="cssProgress-bar">
+        <span class="cssProgress-label"></span>
+      </div>
     </div>
-</div>
+  </div>
 
-<div id="story-title-div">
-    <img src="img/heart.png" id="heart">
-    <h4 id="story-title"></h4><br>
+  <div id="story-title-div">
+    <img src="img/heart.png" class="heart">
+    <h4 id="story-title"></h4>
+    <img src="img/heart.png" class="heart">
+    <br>
     <p id="story-subtitle">고래의 성장단계에 따른 스토리가 표시됩니다.<br>버튼을 클릭해보세요!</p>
-</div>
-<div id="story-button-div">
-</div>
+  </div>
 
-<div id="story"></div>
+  <div id="story-btn-container"></div>
+  
+  <div id="story-container"></div>
 
-<script src="js/jquery-3.4.1.min.js"></script>
-<script src="js/database.js"></script>
-<script src="js/story.js"></script>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/database.js"></script>
+  <script src="js/story.js"></script>
+
 </body>
 </html>

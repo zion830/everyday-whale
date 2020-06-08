@@ -2,465 +2,477 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:500');
 
 * {
-    margin: 0 auto;
-    font-family: 'Jua', sans-serif;
-    font-weight: normal;
+  margin: 0 auto;
+  font-family: 'Jua', sans-serif;
+  font-weight: normal;
 }
 
 .body-center {
-    width: 100%;
-    height: auto;
-    overflow-x: hidden;
-    text-align: center;
+  width: 100%;
+  height: auto;
+  overflow-x: hidden;
+  text-align: center;
 }
 
-h3 {
-    text-align: center;
-    color: #296e81;
-    font-size: 1.8em;
-    padding-top: 8%;
+h1 {
+  font-size: 1.8em;
+  padding: 0 1em;
+}
+
+.text-blue {
+  color: #296e81;
 }
 
 a, a:hover {
-    text-decoration: none;
-    text-align: center;
+  text-decoration: none;
+  text-align: center;
+}
+
+.fixed {
+position: fixed;
+}
+
+.padding-large {
+  padding: 30px;
 }
 
 /*시작 페이지*/
 .gradient {
-    background-image: linear-gradient(#c6eaff, white, white);
+  background-image: linear-gradient(#c6eaff, white, white);
 }
 
 .btn-submit {
-    display: inline-block;
-    text-align: center;
-    vertical-align: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    border: 1px solid transparent;
-    padding: 0.1rem 1.2rem;
-    font-size: 1.3rem;
-    line-height: 1.5;
-    border-radius: 0.5rem;
-    background: #003c72;
-    color: white;
-    margin-top: 7%;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 0.1rem 1.2rem;
+  font-size: 1.3rem;
+  line-height: 1.5;
+  border-radius: 0.5rem;
+  background: #003c72;
+  color: white;
+  margin-top: 7%;
 }
 
 #story-title-div {
-    text-align: center;
-    margin-top: 60px;
-    margin-bottom: 15px;
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 15px;
 }
 
-#story-button-div {
-    margin-left: 1em;
-    margin-right: 1em;
-    text-align: center;
+#story-btn-container {
+  margin-left: 1em;
+  margin-right: 1em;
+  text-align: center;
 }
 
-.story-button {
-    border: 2px solid #006689;
-    border-radius: 8px;
-    background-color: white;
-    width: 60px;
-    height: 60px;
-    display: inline-block;
-    font-size: 4em;
-    color: #ffb217;
-    text-align: center;
-    vertical-align: middle;
-    padding: 3px 0 0 0;
-    margin: 0.7%;
-    cursor: pointer;
+.story-btn {
+  border: 2px solid #006689;
+  border-radius: 8px;
+  background-color: white;
+  width: 60px;
+  height: 60px;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  padding: 3px 0 0 0;
+  margin: 0.7%;
+  cursor: pointer;
+  overflow: hidden;
 }
 
-#heart {
-    width: 0.7em;
-    margin: 4px 8px;
-    display: inline;
+.heart {
+  width: 0.7em;
+  margin: 4px;
+  display: inline;
 }
 
 #story-title {
-    font-size: 1.7em;
-    color: #006689;
-    display: inline;
+  font-size: 1.7em;
+  color: #006689;
+  display: inline;
 }
 
 #story-subtitle {
-    font-size: 1.3em;
-    color: #8C8C8C;
-    display: inline;
-    margin-top: 10px;
+  font-size: 1.3em;
+  color: #8C8C8C;
+  display: inline;
+  margin-top: 10px;
 }
 
-.story-content, #story {
-    font-family: 'Noto Sans KR', sans-serif;
-    font-size: 1.2em;
-    color: #006689;
-    margin: 1em;
+.story-content, #story-container {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 1.2em;
+  color: #006689;
+  margin: 1em;
 }
 
 .not-open {
-    font-family: 'Noto Sans KR', sans-serif;
-    font-size: 1.2em;
-    text-align: center;
-    color: #006689;
-    margin: 1em;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 1.2em;
+  text-align: center;
+  color: #006689;
+  margin: 1em;
 }
 
 .story-lock {
-    width: 30px;
-    margin-top: 20px;
+  width: 30px;
+  margin-top: 20px;
 }
 
 #whale-name {
-    border: 1px solid transparent;
-    border-bottom: 1.5px solid #003c72;
-    text-align: center;
-    font-size: 1.8em;
+  border: 1px solid transparent;
+  border-bottom: 1.5px solid #003c72;
+  text-align: center;
+  font-size: 1.8em;
 }
 
 .btn-submit:hover {
-    color: #d8ecff;
+  background-color: #006689;
 }
 
 #whale-start {
-    max-width: 300px;
-    height: auto;
-    margin: 5% 0 7% 0;
-    animation: swing 3s ease-in-out infinite;
+  max-width: 300px;
+  height: auto;
+  margin: 5% 0 7% 0;
+  animation: swing 3s ease-in-out infinite;
 }
 
-#name-msg {
-    color: red;
-    margin: 1em;
+.error-msg {
+font-size: medium;
+color: red;
+margin: 1em;
 }
 
 /*메인 페이지*/
-#menu {
-    display: inline-block;
+.menu-btn-container {
+  display: inline-block;
+  margin: 1.5em
 }
 
 .btn {
-    color: #296e81;
-    text-decoration: none;
-    text-align: center;
-    margin-left: 10%;
-    font-size: 1.4em;
-    font-weight: lighter;
+  color: #296e81;
+  text-decoration: none;
+  text-align: center;
+  font-size: 1.4em;
+  font-weight: lighter;
 }
 
 .btn-img {
-    width: 35px;
-}
-
-.btn-menu {
-    float: left;
-    margin: 1.5em
+  width: 35px;
 }
 
 #whale-main {
-    margin-top: 3em;
-    width: 300px;
-    animation: swing 2s ease-in-out infinite;
+  margin-top: 3em;
+  width: 300px;
+  animation: swing 2s ease-in-out infinite;
 }
 
 #whale-whalepage {
-    margin-top: 1em;
-    width: 230px;
-    animation: swing 2s ease-in-out infinite;
+  margin-top: 1em;
+  width: 230px;
+  animation: swing 2s ease-in-out infinite;
 }
 
 .body-main {
-    background: white url("../img/background.png") no-repeat;
-    background-size: 590px auto;
+  background: white url("../img/background.png") no-repeat;
+  background-size: 590px auto;
 }
 
 .body-whale {
-    background: white url("../img/whale_bg.png") no-repeat;
-    background-size: 590px auto;
+  background: white url("../img/whale_bg.png") no-repeat;
+  background-size: 590px auto;
 }
 
 .whale-info {
-    font-size: 2.5em;
-    color: #003c72;
-    margin: 1em;
-    text-shadow: 1px 1px 0 white,
-    -1px -1px 0 white, 1px -1px 0 white,
-    -1px 1px 0 white, 1px 1px 0 white;
+  font-size: 2.5em;
+  color: #003c72;
+  margin: 1em;
+  text-shadow: 1px 1px 0 white,
+  -1px -1px 0 white, 1px -1px 0 white,
+  -1px 1px 0 white, 1px 1px 0 white;
 }
 
 .whale-info2 {
-    font-size: 2.2em;
-    color: #003c72;
-    margin-bottom: 0.2em;
-    text-shadow: 1px 1px 0 white,
-    -1px -1px 0 white, 1px -1px 0 white,
-    -1px 1px 0 white, 1px 1px 0 white;
+  font-size: 2.2em;
+  color: #003c72;
+  margin-bottom: 0.2em;
+  text-shadow: 1px 1px 0 white,
+  -1px -1px 0 white, 1px -1px 0 white,
+  -1px 1px 0 white, 1px 1px 0 white;
+}
+
+#list-msg {
+  font-size: 1.2em;
+  margin-top: 2.5em;
 }
 
 .todo-list {
-    font-size: 1.3em;
-    margin: 2em 2em;
-    text-align: left;
-    padding: 0;
-    list-style-type: none
+  font-size: 1.3em;
+  margin: 2em 2em;
+  text-align: left;
+  padding: 0;
+  list-style-type: none
 }
 
 li {
-    padding: 0.5em 0.7em;
-    margin-bottom: 10px;
-    background: #f2f7ff;
-    color: #003c72;
-    border-radius: 0.5em;
-    border: 1.5px solid #003c72;
+  padding: 0.5em 0.7em;
+  margin-bottom: 10px;
+  background: #f2f7ff;
+  color: #003c72;
+  border-radius: 0.5em;
+  border: 1.5px solid #003c72;
 }
 
 .todo-text {
-    font-family: 'Noto Sans KR', sans-serif;
-    text-decoration: none;
+  font-family: 'Noto Sans KR', sans-serif;
+  text-decoration: none;
 }
 
 .checkbox {
-    width: 20px;
-    margin-right: 5px;
+  width: 20px;
+  margin-right: 5px;
 }
 
 #input-to-do {
-    font-family: 'Noto Sans KR', sans-serif;
-    background: #00000000;
-    border: none;
-    padding-right: 50px;
-    font-size: 1.0em;
+  font-family: 'Noto Sans KR', sans-serif;
+  background: #00000000;
+  border: none;
+  padding-right: 50px;
+  font-size: 1.0em;
 }
 
 .btn-finish {
-    right: 0;
-    display: inline-block;
-    position: absolute;
-    background-image: url("../img/ic_close.png");
-    background-size: 15px;
-    vertical-align: middle;
-    background-color: transparent;
-    margin-top: 5px;
-    margin-right: 40px;
-    padding-right: 16px;
-    background-repeat: no-repeat;
-    border: none;
-    cursor: pointer;
+  right: 0;
+  display: inline-block;
+  position: absolute;
+  background-image: url("../img/ic_close.png");
+  background-size: 15px;
+  vertical-align: middle;
+  background-color: transparent;
+  margin-top: 5px;
+  margin-right: 40px;
+  padding-right: 16px;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
 }
 
 .btn-add {
-    float: right;
-    display: inline-block;
-    background-image: url("../img/plus.png");
-    background-size: 25px;
-    vertical-align: middle;
-    background-color: transparent;
-    padding-right: 20px;
-    padding-bottom: 10px;
-    background-repeat: no-repeat;
-    border: none;
-    cursor: pointer;
+  float: right;
+  display: inline-block;
+  background-image: url("../img/plus.png");
+  background-size: 25px;
+  vertical-align: middle;
+  background-color: transparent;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
 }
 
 .btn-edit {
-    font-family: 'Noto Sans KR', sans-serif;
-    display: inline-block;
-    color: white;
-    background-color: #003c72;
-    border-radius: 10px;
-    font-size: x-small;
-    border: none;
-    cursor: pointer;
+  font-family: 'Noto Sans KR', sans-serif;
+  display: inline-block;
+  color: white;
+  background-color: #003c72;
+  border-radius: 10px;
+  font-size: x-small;
+  border: none;
+  cursor: pointer;
 }
 
 /* 커스텀 체크박스 */
 .container {
-    font-family: 'Noto Sans KR', sans-serif;
-    display: inline-block;
-    position: relative;
-    padding-left: 35px;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    margin-right: 30px;
+  font-family: 'Noto Sans KR', sans-serif;
+  display: inline-block;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin-right: 30px;
 }
 
 input[type="checkbox"] {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
 }
 
 .checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 25px;
-    width: 25px;
-    vertical-align: middle;
-    background-image: url("../img/unchecked.png");
-    background-size: 25px;
-    background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  vertical-align: middle;
+  background-image: url("../img/unchecked.png");
+  background-size: 25px;
+  background-repeat: no-repeat;
 }
 
 .checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
+  content: "";
+  position: absolute;
+  display: none;
 }
 
 .container input:checked ~ .checkmark:after {
-    display: block;
+  display: block;
 }
 
 .container .checkmark:after {
-    width: 25px;
-    height: 25px;
-    background-image: url("../img/checked.png");
-    background-size: 25px;
-    background-repeat: no-repeat;
+  width: 25px;
+  height: 25px;
+  background-image: url("../img/checked.png");
+  background-size: 25px;
+  background-repeat: no-repeat;
 }
 
 /* 설정 */
-.wave-back {
-    background: white url("../img/back_wave.png") no-repeat;
-    background-size: 590px auto;
+.wave-bg {
+background: white url("../img/back_wave.png") no-repeat;
+background-size: 590px auto;
+overflow-x: hidden;
 }
 
-#btn-back {
-    width: 30px;
-    margin: 15px;
-    display: block;
-    top: 0;
-    left: 0;
-    z-index: 1;
+.btn-back {
+width: 30px;
+margin: 15px 0 30px 15px;
+display: block;
+top: 0;
+left: 0;
+z-index: 1;
 }
 
-#btn-back-fix {
-    width: 30px;
-    position: fixed;
-    margin: 15px;
-    display: block;
-    top: 0;
-    left: 0;
-    z-index: 1;
+.center {
+  text-align: center;
 }
 
-#setting-main {
-    text-align: center;
-}
-
-.setting-title {
-    color: #003c72;
-}
-
-.setting-title-left {
-    color: #003c72;
-    float: left;
+.text-navy {
+  color: #003c72;
 }
 
 .setting-des {
-    color: #19aac1;
-    font-size: 1.1em;
-    margin: 0.5em;
+  color: #19aac1;
+  font-size: 1.1em;
+  margin: 0.5em;
 }
 
 hr {
-    margin: 3em 5em;
+  margin: 3em 5em;
 }
 
 .link {
-    margin-top: 1em;
-    text-align: center;
+  margin-top: 1em;
+  text-align: center;
 }
 
 .setting-new-tab {
-    margin: 10px 40px;
-    text-align: left;
+  margin: 10px 40px;
+  text-align: left;
 }
 
 .btn-clear {
-    display: inline-block;
-    text-align: center;
-    vertical-align: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    border: 1px solid transparent;
-    padding: 0.2rem 1.2rem 0rem 1.2rem;
-    font-size: 1.3rem;
-    line-height: 1.5;
-    border-radius: 0.5rem;
-    background: #003c72;
-    color: white;
-    margin-top: 1%;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 0.2rem 1.2rem 0rem 1.2rem;
+  font-size: 1.3rem;
+  line-height: 1.5;
+  border-radius: 0.5rem;
+  background: #003c72;
+  color: white;
+  margin-top: 1%;
 }
 
 h4 {
-    margin-top: 10px;
-    font-size: 1.1em;
+  margin-top: 10px;
+  font-size: 1.1em;
 }
 
 .info {
-    font-family: 'Noto Sans KR', sans-serif;
-    color: #003c72;
+  font-family: 'Noto Sans KR', sans-serif;
+  color: #003c72;
 }
 
 /* 애니메이션 */
 @keyframes swing {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(15px);
-    }
-    100% {
-        transform: translateY(0);
-    }
+  0% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(15px);
+  }
+  100% {
+      transform: translateY(0);
+  }
 }
 
 /* 할일 */
 #count {
-    color: #f44186;
+  color: #f44186;
 }
 
 #no-item-msg {
-    color: #ff70a7;
+  color: #ff70a7;
+  font-size: medium;
+  margin-top: 1.5em;
 }
 
 .period {
-    font-family: 'Noto Sans KR', sans-serif;
-    font-size: 0.8em;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 0.8em;
 }
 
 .finish-item {
-    word-wrap: break-word;
-    display: block;
+  word-wrap: break-word;
+  display: block;
 }
 
 #pages {
-    margin: 15px;
-    font-size: 1.7em;
+  margin: 15px;
+  font-size: 1.8em;
 }
 
-.page-text {
-    color: #003c72;
+.page-num {
+  color: #003c72;
+  background-color: transparent;
+  border: none;
+  margin: 0 3px;
+  cursor: pointer;
 }
 
-.page-text:hover {
-    color: #3798D9;
+.page-num:hover {
+  color: #3798D9;
+}
+
+.page-num:focus {
+  outline-color: transparent;
+}
+
+.selected-page-num {
+  font-size: medium;
+  color: black;
+  cursor: default;
 }
 
 b {
-    font-weight: bolder;
+  font-weight: bolder;
 }
