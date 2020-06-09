@@ -14,6 +14,10 @@
   text-align: center;
 }
 
+.cssProgress-label {
+  line-height: normal !important;
+}
+
 h1 {
   font-size: 1.8em;
   padding: 0 1em;
@@ -189,7 +193,7 @@ margin: 1em;
   background-size: 590px auto;
 }
 
-.whale-info {
+.name-text {
   font-size: 2.5em;
   color: #003c72;
   margin: 1em;
@@ -198,7 +202,7 @@ margin: 1em;
   -1px 1px 0 white, 1px 1px 0 white;
 }
 
-.whale-info2 {
+.name-text2 {
   font-size: 2.2em;
   color: #003c72;
   margin-bottom: 0.2em;
@@ -281,15 +285,19 @@ li {
   cursor: pointer;
 }
 
-.btn-edit {
+.btn-change-name {
   font-family: 'Noto Sans KR', sans-serif;
   display: inline-block;
   color: white;
   background-color: #003c72;
   border-radius: 10px;
   font-size: x-small;
-  border: none;
+  border: 1px solid transparent;
   cursor: pointer;
+}
+
+.btn-change-name:hover {
+  border-color: white;
 }
 
 /* 커스텀 체크박스 */
