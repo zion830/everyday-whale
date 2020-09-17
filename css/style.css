@@ -7,6 +7,14 @@
   font-weight: normal;
 }
 
+*:focus {
+  outline-style: none !important;
+}
+
+input:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder { 
+  color:transparent; 
+}
+
 .body-center {
   width: 100%;
   height: auto;
@@ -215,7 +223,7 @@ margin: 1em;
 
 #list-msg {
   font-size: 1.2em;
-  margin-top: 2.5em;
+  margin: 2.5em 0 0.8em 0;
 }
 
 .todo-list {
@@ -235,6 +243,10 @@ margin: 1em;
   border: 1.5px solid #003c72;
 }
 
+.todo-list input:checked + span {
+  text-decoration: line-through;
+}
+
 .todo-text {
   font-family: 'Noto Sans KR', sans-serif;
   text-decoration: none;
@@ -251,10 +263,6 @@ margin: 1em;
   border: none;
   padding-right: 50px;
   font-size: 1.0em;
-}
-
-#input-todo:focus {
-  outline: none;
 }
 
 .btn-finish {
@@ -475,10 +483,6 @@ h4 {
 
 .page-num:hover {
   color: #3798D9;
-}
-
-.page-num:focus {
-  outline-color: transparent;
 }
 
 .selected-page-num {

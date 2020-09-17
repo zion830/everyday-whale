@@ -7,7 +7,7 @@ class Whale {
   constructor() {
     this.name = localStorage.getItem("name")
     this.level = localStorage.getItem("level")
-    this.exp = localStorage.getItem("exp")
+    this.exp = (localStorage.getItem("exp") === null ? 0 : localStorage.getItem("exp"))
 
     this.changeNameEventHandler()
     this.renderWhaleInfo()
@@ -28,8 +28,8 @@ class Whale {
       return false
     }
 
-    progressLabel[0].insertAdjacentText('beforeend', this.exp)
-    progressBar[0].style.width = this.exp
+    progressLabel[0].insertAdjacentText('beforeend', `${this.exp}%`)
+    progressBar[0].style.width = `${this.exp}%`
   }
 
   changeNameEventHandler() {

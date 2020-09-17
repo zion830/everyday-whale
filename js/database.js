@@ -36,23 +36,23 @@ function start() {
   setWhale(status)
   initList()
 
-  $('.btn-add').click(function () {
-    insertData()
-  })
+  // $('.btn-add').click(function () {
+  //   insertData()
+  // })
 
-  var check = true
-  $(".container").click(function () {
-    var id = Number(this.id.substring(5, this.id.length))
-    if (check) {
-      var todoList = JSON.parse(localStorage["todoList"])
-      todoList[id].isChecked = !todoList[id].isChecked
-      localStorage.setItem("todoList", JSON.stringify(todoList))
+  // var check = true
+  // $(".container").click(function () {
+  //   var id = Number(this.id.substring(5, this.id.length))
+  //   if (check) {
+  //     var todoList = JSON.parse(localStorage["todoList"])
+  //     todoList[id].isChecked = !todoList[id].isChecked
+  //     localStorage.setItem("todoList", JSON.stringify(todoList))
 
-      setItemLineThrough(id, todoList[id].isChecked)
-    }
+  //     setItemLineThrough(id, todoList[id].isChecked)
+  //   }
 
-    check = !check;
-  });
+  //   check = !check;
+  // });
 
   $('.btn-finish').click(function () {
     var todoList = JSON.parse(localStorage["todoList"])
@@ -62,9 +62,9 @@ function start() {
       removeItem(this.id)
   })
 
-  $("#input-to-do").keypress(function (e) {
-    if (e.which === 13) insertData()
-  })
+  // $("#input-to-do").keypress(function (e) {
+  //   if (e.which === 13) insertData()
+  // })
 }
 
 // function renderWhaleInfo() {
@@ -144,27 +144,27 @@ function start() {
 //   setLineThrough();
 // }
 
-function setLineThrough() {
-  let id = 0;
-  try {
-    const todoList = JSON.parse(localStorage["todoList"]);
+// function setLineThrough() {
+//   let id = 0;
+//   try {
+//     const todoList = JSON.parse(localStorage["todoList"]);
 
-    todoList.forEach(value => {
-      if (value.isChecked && value.finishDate === null) {
-        $(`#todo-text-${id}`).css("text-decoration", "line-through");
-      } else if (!value.isChecked && value.finishDate === null) {
-        $(`#todo-text-${id}`).css("text-decoration", "none");
-      }
+//     todoList.forEach(value => {
+//       if (value.isChecked && value.finishDate === null) {
+//         $(`#todo-text-${id}`).css("text-decoration", "line-through");
+//       } else if (!value.isChecked && value.finishDate === null) {
+//         $(`#todo-text-${id}`).css("text-decoration", "none");
+//       }
 
-      id++;
-    });
-  } catch (e) {
-  }
-}
+//       id++;
+//     });
+//   } catch (e) {
+//   }
+// }
 
-function setItemLineThrough(id, status) {
-  $(`#todo-text-${id}`).css("text-decoration", status ? "line-through" : "none");
-}
+// function setItemLineThrough(id, status) {
+//   $(`#todo-text-${id}`).css("text-decoration", status ? "line-through" : "none");
+// }
 
 // function finish(value) {
 //   var arr = JSON.parse(localStorage["todoList"]);

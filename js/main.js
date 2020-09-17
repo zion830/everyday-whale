@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', (event) => {
   
-  if(existsName()) {
+  if(isExistName()) {
     const main = new Main()
     document.querySelector("#input-todo").focus()
   } else {
@@ -9,9 +9,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
   }
 })
 
-function existsName() {
-  if(localStorage.getItem("name") === null) {return false}
-  else {return true}
+function isExistName() {
+  return localStorage.getItem("name") !== null
 }
 
 
@@ -22,7 +21,6 @@ class Main {
   constructor() {
     this.name = localStorage.getItem("name")
     this.level = localStorage.getItem("level")
-    this.todoList = this.getTodoList()
 
     this.renderWhaleInfo()
     this.rendereWhaleImg()
@@ -62,17 +60,15 @@ class Main {
   }
 
   renderTodoList() {
-
+    const todoList = this.getTodoList()
     const target = document.querySelector('#todo-list')
     target.innerHTML = ""
 
-    if(this.todoList === null || this.todoList.length === 0) {
-
-      const todoMsg = `<p class="center text-blue">첫 번째 할 일을 추가해보세요!</p>`
+    if(todoList === null || todoList.length === 0) {
+      const todoMsg = `<p class="center text-blue" id="list-msg">첫 번째 할 일을 추가해보세요!</p>`
       target.insertAdjacentHTML('afterbegin', todoMsg)
-
     } else {
-      const listHTML = this.makeTodoListHTML(this.todoList)
+      const listHTML = this.makeTodoListHTML(todoList.filter( todo => todo.finishDate === null))
       target.insertAdjacentHTML('afterbegin', listHTML)
     }
   }
@@ -85,8 +81,8 @@ class Main {
       result += `
         <li>
           <label class="container" id="todo-${todo.id}">
-            <span class="todo-text" id="todo-text-${todo.id}">${todo.todo}</span>
             <input type="checkbox" ${(todo.isChecked) ? "checked" : ""}/>
+            <span class="todo-text">${todo.todo}</span>
             <span class="checkmark"></span>
           </label>
           <input type="button" class="btn-finish" id="${todo.id}" />
@@ -100,17 +96,21 @@ class Main {
   setEvent() {
     this.addTodoBtnEvent()
     this.enterKeyDownAddTodoEvent()
+    this.finishTodoEvent()
+    this.removeTodoEvent()
   }
 
   addTodoBtnEvent() {
-    document.querySelector('#add-todo').addEventListener('click', this.insertTodoData.bind(this))
+    document.querySelector('#add-todo').addEventListener('click', () => {
+      this.insertTodoData()
+    })
   }
 
   enterKeyDownAddTodoEvent() {
-    document.querySelector('#input-todo').addEventListener('keypress', function(e) {
+    document.querySelector('#input-todo').addEventListener('keypress', (e) => {
       // 엔터로 할 일 입력 완료
       if(e.keyCode === 13) { this.insertTodoData() }
-    }.bind(this))
+    })
   }
 
   insertTodoData() {
@@ -119,17 +119,18 @@ class Main {
     if (todo === "") {
       alert('할 일을 입력해주세요!')
     } else {
+      const todoList = this.getTodoList()
+
       const newTodo = {
-        id : this.todoList.length,
+        id : (todoList.length > 0) ? todoList[todoList.length-1].id + 1 : 0,
         todo : todo, 
         isChecked : false, 
         addDate : this.getDateStr(), 
-        finishedDate : null
+        finishDate : null
       }
 
-      const newTodoList = this.todoList.concat(newTodo)
+      const newTodoList = todoList.concat(newTodo)
 
-      this.todoList = newTodoList
       localStorage.setItem("todoList", JSON.stringify(newTodoList))
       
       document.querySelector('#input-todo').value = ""
@@ -137,28 +138,39 @@ class Main {
     }
   }
 
-  finishTodo(item) {
-    var arr = JSON.parse(localStorage["todoList"])
-  
-    arr[item].finishDate = getDateStr()
-    localStorage.setItem("todoList", JSON.stringify(arr))
-    localStorage.setItem("sumCount", Number(localStorage.getItem("sumCount")) + 1)
-  
-    setLevel()
-    location.reload()
+  finishTodoEvent() {
+    document.querySelector('#todo-list').addEventListener('click', (e) => {
+      const target = e.target
+
+      if(target.tagName === "INPUT" && target.type === "checkbox") {
+        const checkedTodoId = Number(target.parentNode.id.replace("todo-", ""))
+        let newTodoList = this.getTodoList()
+
+        newTodoList.find( todo => todo.id === checkedTodoId).isChecked = target.checked
+
+        localStorage.setItem("todoList", JSON.stringify(newTodoList))
+      }
+    })
   }
   
-  removeTodo(value) {
-    var arr = JSON.parse(localStorage["todoList"])
-    arr.splice(value, 1)
-  
-    var id = 0
-    arr.forEach(value => {
-      value.id = id
-      id++
+  removeTodoEvent() {
+    document.querySelector('#todo-list').addEventListener('click', (e) => {
+      const target = e.target
+
+      if(target.tagName === "INPUT" && target.type === "button") {
+        const removedTodoId = Number(target.id)
+        let newTodoList = this.getTodoList()
+
+        if(!newTodoList.find( todo => todo.id === removedTodoId).isChecked) {
+          const removedTodoIndex = newTodoList.indexOf(newTodoList.find( todo => todo.id === removedTodoId))
+          newTodoList.splice(removedTodoIndex, 1)
+        } else {
+          newTodoList.find( todo => todo.id === removedTodoId).finishDate = this.getDateStr()
+        }
+
+        localStorage.setItem("todoList", JSON.stringify(newTodoList))
+        this.renderTodoList()
+      }
     })
-  
-    localStorage.setItem("todoList", JSON.stringify(arr))
-    location.reload()
   }
 }
