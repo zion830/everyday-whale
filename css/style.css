@@ -7,11 +7,23 @@
   font-weight: normal;
 }
 
+*:focus {
+  outline-style: none !important;
+}
+
+input:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder { 
+  color:transparent; 
+}
+
 .body-center {
   width: 100%;
   height: auto;
   overflow-x: hidden;
   text-align: center;
+}
+
+.cssProgress-label {
+  line-height: normal !important;
 }
 
 h1 {
@@ -182,6 +194,8 @@ margin: 1em;
 .body-main {
   background: white url("../img/background.png") no-repeat;
   background-size: 590px auto;
+  height: auto;
+  overflow: visible;
 }
 
 .body-whale {
@@ -189,16 +203,16 @@ margin: 1em;
   background-size: 590px auto;
 }
 
-.whale-info {
+.name-text1 {
   font-size: 2.5em;
   color: #003c72;
-  margin: 1em;
+  margin: 1em 0 2.5em 0;
   text-shadow: 1px 1px 0 white,
   -1px -1px 0 white, 1px -1px 0 white,
   -1px 1px 0 white, 1px 1px 0 white;
 }
 
-.whale-info2 {
+.name-text2 {
   font-size: 2.2em;
   color: #003c72;
   margin-bottom: 0.2em;
@@ -209,24 +223,28 @@ margin: 1em;
 
 #list-msg {
   font-size: 1.2em;
-  margin-top: 2.5em;
+  margin: 2.5em 0 0.8em 0;
 }
 
 .todo-list {
   font-size: 1.3em;
-  margin: 2em 2em;
+  margin: 0 2em;
   text-align: left;
   padding: 0;
   list-style-type: none
 }
 
-li {
+.todo-list > li, .todo-list > div {
   padding: 0.5em 0.7em;
   margin-bottom: 10px;
   background: #f2f7ff;
   color: #003c72;
   border-radius: 0.5em;
   border: 1.5px solid #003c72;
+}
+
+.todo-list input:checked + span {
+  text-decoration: line-through;
 }
 
 .todo-text {
@@ -239,7 +257,7 @@ li {
   margin-right: 5px;
 }
 
-#input-to-do {
+#input-todo {
   font-family: 'Noto Sans KR', sans-serif;
   background: #00000000;
   border: none;
@@ -277,15 +295,19 @@ li {
   cursor: pointer;
 }
 
-.btn-edit {
+.btn-change-name {
   font-family: 'Noto Sans KR', sans-serif;
   display: inline-block;
   color: white;
   background-color: #003c72;
   border-radius: 10px;
   font-size: x-small;
-  border: none;
+  border: 1px solid transparent;
   cursor: pointer;
+}
+
+.btn-change-name:hover {
+  border-color: white;
 }
 
 /* 커스텀 체크박스 */
@@ -461,10 +483,6 @@ h4 {
 
 .page-num:hover {
   color: #3798D9;
-}
-
-.page-num:focus {
-  outline-color: transparent;
 }
 
 .selected-page-num {

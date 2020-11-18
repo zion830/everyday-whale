@@ -6,41 +6,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="body-main">
-  
-  <div class="body-center">
-    <div id="menu">
-      <div class="menu-btn-container">
-        <a href="whale.html" class="btn">
-          <img src="img/ic_whale.png" alt="웨일 버튼" class="btn-img">
-          <div>웨일</div>
-        </a>
+<body>
+  <div class="body-main">
+    <div class="center">
+      <div id="menu">
+        <div class="menu-btn-container">
+          <a href="whale.html" class="btn">
+            <img src="img/ic_whale.png" alt="웨일 버튼" class="btn-img">
+            <div>웨일</div>
+          </a>
+        </div>
+        <div class="menu-btn-container">
+          <a href="todo.html?index=0" class="btn">
+            <img src="img/ic_todo.png" alt="할 일 버튼" class="btn-img">
+            <div>할일</div>
+          </a>
+        </div>
+        <div class="menu-btn-container">
+          <a href="setting.html" class="btn">
+            <img src="img/ic_setting.png" alt="설정 버튼" class="btn-img">
+            <div>설정</div>
+          </a>
+        </div>
       </div>
-      <div class="menu-btn-container">
-        <a href="todo.html?index=0" class="btn">
-          <img src="img/ic_todo.png" alt="할 일 버튼" class="btn-img">
-          <div>할일</div>
-        </a>
-      </div>
-      <div class="menu-btn-container">
-        <a href="setting.html" class="btn">
-          <img src="img/ic_setting.png" alt="설정 버튼" class="btn-img">
-          <div>설정</div>
-        </a>
+
+      <img alt="웨일 이미지" id="whale-main">
+      <h1 id="lv-name" class="name-text1"></h1>
+    </div>
+
+    <div>
+      <ul id="todo-list" class="todo-list">
+      </ul>
+      <div class="todo-list">
+        <div>
+          <input type="text" placeholder="새로운 할 일" id="input-todo">
+          <input type="button" id="add-todo" class="btn-add">
+        </div>
       </div>
     </div>
 
-    <img alt="웨일 이미지" id="whale-main">
-    <h1 class="whale-info"></h1>
   </div>
 
-  <br>
-
-  <p id="list-msg" class="center text-blue"></p>
-  <div id="todo-list"></div>
-
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/database.js"></script>
+  <script src="js/main.js"></script>
 
 </body>
 </html>
