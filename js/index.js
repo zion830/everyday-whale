@@ -1,15 +1,11 @@
+import { getLocalStorageItem } from "./util/localStorage.js";
 import Main from "./comp/Main.js";
 
 document.addEventListener("DOMContentLoaded", (event) => {
-  if (isExistName()) {
+  if (getLocalStorageItem({ key: "name", defalutValue: "" }) !== "") {
     new Main();
-    document.querySelector("#input-todo").focus();
   } else {
     history.replaceState({}, "start", "start.html");
     location.reload();
   }
 });
-
-function isExistName() {
-  return localStorage.getItem("name") !== null;
-}

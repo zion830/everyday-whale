@@ -5,6 +5,8 @@ export default class TodoInput {
 
     this.render();
     this.bindAddTodoEvent();
+
+    document.querySelector("#input-todo").focus();
   }
 
   bindAddTodoEvent() {
