@@ -17,8 +17,9 @@ ul {
   list-style-type: none;
 }
 
-*:focus {
-  outline-color: transparent !important;
+input:focus,
+button:focus {
+  outline: none;
 }
 
 .sr-only {
@@ -56,6 +57,14 @@ a:hover {
   padding: 30px;
 }
 
+.text-outline {
+  text-shadow: 1px 1px 0 white, -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+}
+
+.swing {
+  animation: swing 2s ease-in-out infinite;
+}
+
 /*시작 페이지*/
 .gradient {
   background-image: linear-gradient(#c6eaff, white, white);
@@ -77,6 +86,204 @@ a:hover {
   background: #003c72;
   color: white;
   margin-top: 7%;
+}
+
+#whale-name {
+  border: 1px solid transparent;
+  border-bottom: 1.5px solid #003c72;
+  text-align: center;
+  font-size: 1.8em;
+}
+
+.btn-submit:hover {
+  background-color: #006689;
+}
+
+#whale-start {
+  max-width: 300px;
+  height: auto;
+  margin: 5% 0 7% 0;
+  animation: swing 3s ease-in-out infinite;
+}
+
+.error-msg {
+  font-size: medium;
+  color: red;
+  margin: 1em;
+}
+
+/* 메인 페이지 */
+.main-bg {
+  background: white url("../img/background.png") no-repeat;
+  background-size: 590px auto;
+  height: auto;
+  overflow: visible;
+}
+
+.nav-list > li {
+  display: inline-block;
+  margin: 1.5em;
+}
+
+.nav-btn {
+  color: #296e81;
+  text-decoration: none;
+  text-align: center;
+  font-size: 1.4em;
+  font-weight: lighter;
+}
+
+.nav-btn > img {
+  width: 35px;
+}
+
+#main-whale {
+  margin: 35px 0 65px 0;
+}
+
+.main-whale-img {
+  width: 300px;
+}
+
+.main-whale-name {
+  font-size: 2.5em;
+  font-weight: normal;
+  color: #003c72;
+  margin-top: 40px;
+}
+
+#list-msg {
+  font-size: 1.2em;
+  margin: 2.5em 0 0.8em 0;
+}
+
+.todo-list,
+.todo-input {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.todo-list {
+  font-size: 1.3em;
+  margin: 0 30px;
+  text-align: left;
+  padding: 0;
+  list-style-type: none;
+}
+
+.todo-list > li {
+  padding: 0.5em 0.7em;
+  margin-bottom: 10px;
+  background: #f2f7ff;
+  color: #003c72;
+  border-radius: 0.5em;
+  border: 1.5px solid #003c72;
+  display: flex;
+  align-items: center;
+}
+
+.todo-label {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+
+.todo-text {
+  flex-grow: 1;
+  margin-right: 12px;
+}
+
+.remove-todo-btn {
+  width: 5px;
+  height: 5px;
+  padding: 7.5px;
+  margin-right: 5px;
+  background-image: url("../img/ic_close.png");
+  background-size: 15px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+}
+
+input:checked ~ .todo-text {
+  text-decoration: line-through;
+}
+
+#todo-input {
+  padding: 0.5em 0.7em;
+  background: #f2f7ff;
+  border-radius: 0.5em;
+  border: 1.5px solid #003c72;
+  margin: 0 30px 50px 30px;
+  display: flex;
+}
+
+#todo-input > input[type="text"] {
+  flex-grow: 1;
+  margin-right: 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 1.3em;
+  color: #333;
+}
+
+.add-todo-btn {
+  width: 25px;
+  height: 25px;
+  background-image: url("../img/plus.png");
+  background-size: 25px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.checkmark {
+  height: 5px;
+  width: 5px;
+  padding: 10px;
+  background-image: url("../img/unchecked.png");
+  background-size: 25px;
+  background-repeat: no-repeat;
+  margin-right: 6px;
+}
+
+:checked + .checkmark {
+  background-image: url("../img/checked.png");
+}
+
+/* 웨일 페이지 */
+.body-whale {
+  background: white url("../img/whale_bg.png") no-repeat;
+  background-size: 590px auto;
+}
+
+#whale-whalepage {
+  width: 230px;
+}
+
+.name-text2 {
+  font-size: 2.2em;
+  margin-bottom: 0.2em;
+}
+
+.btn-change-name {
+  font-family: "Noto Sans KR", sans-serif;
+  display: inline-block;
+  color: white;
+  background-color: #003c72;
+  border-radius: 10px;
+  font-size: x-small;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.btn-change-name:hover {
+  border-color: white;
 }
 
 #story-title-div {
@@ -144,233 +351,6 @@ a:hover {
 .story-lock {
   width: 30px;
   margin-top: 20px;
-}
-
-#whale-name {
-  border: 1px solid transparent;
-  border-bottom: 1.5px solid #003c72;
-  text-align: center;
-  font-size: 1.8em;
-}
-
-.btn-submit:hover {
-  background-color: #006689;
-}
-
-#whale-start {
-  max-width: 300px;
-  height: auto;
-  margin: 5% 0 7% 0;
-  animation: swing 3s ease-in-out infinite;
-}
-
-.error-msg {
-  font-size: medium;
-  color: red;
-  margin: 1em;
-}
-
-/*메인 페이지*/
-.main-bg {
-  background: white url("../img/background.png") no-repeat;
-  background-size: 590px auto;
-  height: auto;
-  overflow: visible;
-}
-
-.nav-list > li {
-  display: inline-block;
-  margin: 1.5em;
-}
-
-.nav-btn {
-  color: #296e81;
-  text-decoration: none;
-  text-align: center;
-  font-size: 1.4em;
-  font-weight: lighter;
-}
-
-.nav-btn > img {
-  width: 35px;
-}
-
-#main-whale {
-  margin: 35px 0 65px 0;
-}
-
-.main-whale-img {
-  width: 300px;
-}
-
-#whale-whalepage {
-  width: 230px;
-}
-
-.swing {
-  animation: swing 2s ease-in-out infinite;
-}
-
-.body-whale {
-  background: white url("../img/whale_bg.png") no-repeat;
-  background-size: 590px auto;
-}
-
-.main-whale-name {
-  font-size: 2.5em;
-  color: #003c72;
-  margin-top: 40px;
-}
-
-.name-text2 {
-  font-size: 2.2em;
-  margin-bottom: 0.2em;
-}
-
-.text-outline {
-  text-shadow: 1px 1px 0 white, -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
-}
-
-#list-msg {
-  font-size: 1.2em;
-  margin: 2.5em 0 0.8em 0;
-}
-
-.todo-list {
-  font-size: 1.3em;
-  margin: 0 2em;
-  text-align: left;
-  padding: 0;
-  list-style-type: none;
-}
-
-.todo-list > li,
-.todo-list > div {
-  padding: 0.5em 0.7em;
-  margin-bottom: 10px;
-  background: #f2f7ff;
-  color: #003c72;
-  border-radius: 0.5em;
-  border: 1.5px solid #003c72;
-}
-
-.todo-list input:checked + span {
-  text-decoration: line-through;
-}
-
-.todo-text {
-  font-family: "Noto Sans KR", sans-serif;
-  text-decoration: none;
-}
-
-.checkbox {
-  width: 20px;
-  margin-right: 5px;
-}
-
-#input-todo {
-  font-family: "Noto Sans KR", sans-serif;
-  background: #00000000;
-  border: none;
-  padding-right: 50px;
-  font-size: 1em;
-}
-
-.btn-finish {
-  right: 0;
-  display: inline-block;
-  position: absolute;
-  background-image: url("../img/ic_close.png");
-  background-size: 15px;
-  vertical-align: middle;
-  background-color: transparent;
-  margin-top: 5px;
-  margin-right: 40px;
-  padding-right: 16px;
-  background-repeat: no-repeat;
-  border: none;
-  cursor: pointer;
-}
-
-.btn-add {
-  float: right;
-  display: inline-block;
-  background-image: url("../img/plus.png");
-  background-size: 25px;
-  vertical-align: middle;
-  background-color: transparent;
-  padding-right: 20px;
-  padding-bottom: 10px;
-  background-repeat: no-repeat;
-  border: none;
-  cursor: pointer;
-}
-
-.btn-change-name {
-  font-family: "Noto Sans KR", sans-serif;
-  display: inline-block;
-  color: white;
-  background-color: #003c72;
-  border-radius: 10px;
-  font-size: x-small;
-  border: 1px solid transparent;
-  cursor: pointer;
-}
-
-.btn-change-name:hover {
-  border-color: white;
-}
-
-/* 커스텀 체크박스 */
-.container {
-  font-family: "Noto Sans KR", sans-serif;
-  display: inline-block;
-  position: relative;
-  padding-left: 35px;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  margin-right: 30px;
-}
-
-input[type="checkbox"] {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
-
-.checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 25px;
-  width: 25px;
-  vertical-align: middle;
-  background-image: url("../img/unchecked.png");
-  background-size: 25px;
-  background-repeat: no-repeat;
-}
-
-.checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-
-.container input:checked ~ .checkmark:after {
-  display: block;
-}
-
-.container .checkmark:after {
-  width: 25px;
-  height: 25px;
-  background-image: url("../img/checked.png");
-  background-size: 25px;
-  background-repeat: no-repeat;
 }
 
 /* 설정 */
