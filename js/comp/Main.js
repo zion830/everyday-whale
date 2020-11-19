@@ -1,14 +1,21 @@
 import { getLocalStorageItem, setLocalStorageItem, getLocalStorageJSONItem } from "../util/localStorage.js";
 import { LEVEL_SETTING } from "../util/constants.js";
+import Whale from "./Whale.js";
 
-export default class App {
+export default class Main {
   constructor() {
     this.name = getLocalStorageItem({ key: "name" });
     this.level = getLocalStorageItem({ key: "level" });
     this.LEVEL_SETTING = LEVEL_SETTING;
 
-    this.renderWhaleInfo();
-    this.rendereWhaleImg();
+    this.components = [
+      new Whale({
+        name: this.name,
+        level: this.level,
+        whaleStatus: this.getStatus(this.level),
+      }),
+    ];
+
     this.renderTodoList();
     this.setEvent();
   }
@@ -21,22 +28,12 @@ export default class App {
     }
   }
 
-  getStatus(level) {
+  getStatus() {
     for (let i = 0; i < this.LEVEL_SETTING.length; i++) {
       if (this.level < this.LEVEL_SETTING[i]) {
         return i;
       }
     }
-  }
-
-  renderWhaleInfo() {
-    const target = document.querySelector("#lv-name");
-    target.innerHTML = `Lv.${this.level} ${this.name}`;
-  }
-
-  rendereWhaleImg() {
-    const target = document.querySelector("#whale-main");
-    target.setAttribute("src", `img/whale${this.getStatus(this.level)}.gif`);
   }
 
   getDateStr() {

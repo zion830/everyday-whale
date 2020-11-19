@@ -1,8 +1,8 @@
-import App from "./comp/App.js";
+import Main from "./comp/Main.js";
 
 document.addEventListener("DOMContentLoaded", (event) => {
   if (isExistName()) {
-    new App();
+    new Main();
     document.querySelector("#input-todo").focus();
   } else {
     history.replaceState({}, "start", "start.html");

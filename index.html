@@ -6,46 +6,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-  <div class="body-main">
-    <div class="center">
-      <div id="menu">
-        <div class="menu-btn-container">
-          <a href="whale.html" class="btn">
-            <img src="img/ic_whale.png" alt="웨일 버튼" class="btn-img">
+<body class="main-bg">
+  <header class="center">
+    <nav>
+      <ul class="nav-list">
+        <li>
+          <a href="whale.html" class="nav-btn">
+            <img src="img/ic_whale.png" alt="웨일">
             <div>웨일</div>
           </a>
-        </div>
-        <div class="menu-btn-container">
-          <a href="todo.html?index=0" class="btn">
-            <img src="img/ic_todo.png" alt="할 일 버튼" class="btn-img">
+        </li>
+        <li>
+          <a href="todo.html?index=0" class="nav-btn">
+            <img src="img/ic_todo.png" alt="할 일">
             <div>할일</div>
           </a>
-        </div>
-        <div class="menu-btn-container">
-          <a href="setting.html" class="btn">
-            <img src="img/ic_setting.png" alt="설정 버튼" class="btn-img">
+        </li>
+        <li>
+          <a href="setting.html" class="nav-btn">
+            <img src="img/ic_setting.png" alt="설정">
             <div>설정</div>
           </a>
-        </div>
-      </div>
-
-      <img alt="웨일 이미지" id="whale-main">
-      <h1 id="lv-name" class="name-text1"></h1>
-    </div>
-
-    <div>
-      <ul id="todo-list" class="todo-list">
+        </li>
       </ul>
-      <div class="todo-list">
-        <div>
-          <input type="text" placeholder="새로운 할 일" id="input-todo">
-          <input type="button" id="add-todo" class="btn-add">
-        </div>
-      </div>
-    </div>
+    </nav>
+  </header>
 
-  </div>
+  <main>
+    <h1 class="sr-only">매일웨일 Todolist</h1>
+
+    <section id="main-whale" class="center"></section>
+
+    <ul id="todo-list" class="todo-list"></ul>
+
+    <form class="todo-list">
+      <input type="text" placeholder="새로운 할 일" id="input-todo">
+      <input type="button" id="add-todo" class="btn-add">
+    </form>
+  </main>
 
   <script src="js/main.js" type="module"></script>
 
