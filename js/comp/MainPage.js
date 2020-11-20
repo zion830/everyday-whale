@@ -1,21 +1,23 @@
-import Whale from "./Whale.js";
+import WhaleImage from "./WhaleImage.js";
 import TodoList from "./TodoList.js";
-import { getLocalStorageItem, setLocalStorageItem, getLocalStorageJSONItem } from "../util/localStorage.js";
-import { LEVEL_SETTING } from "../util/constants.js";
-import { getDateStr } from "../util/util.js";
 import TodoInput from "./TodoInput.js";
+import { getLocalStorageItem, setLocalStorageItem, getLocalStorageJSONItem } from "../util/localStorage.js";
+import { getDateStr, getWhaleStatus } from "../util/util.js";
 
-export default class Main {
+export default class MainPage {
   constructor() {
     this.name = getLocalStorageItem({ key: "name" });
     this.level = getLocalStorageItem({ key: "level" });
     this.todoList = getLocalStorageJSONItem({ key: "todoList", defalutValue: [] });
+    this.whaleStatus = getWhaleStatus(this.level);
 
     this.components = {
-      whale: new Whale({
+      whaleImage: new WhaleImage({
+        $target: document.querySelector("#main-whale"),
         name: this.name,
         level: this.level,
-        whaleStatus: this.getStatus(this.level),
+        whaleStatus: this.whaleStatus,
+        page: "main",
       }),
       todoList: new TodoList({
         todoList: this.todoList,
@@ -24,14 +26,6 @@ export default class Main {
       }),
       todoInput: new TodoInput({ onAddTodo: this.onAddTodo.bind(this) }),
     };
-  }
-
-  getStatus() {
-    for (let i = 0; i < LEVEL_SETTING.length; i++) {
-      if (this.level < LEVEL_SETTING[i]) {
-        return i;
-      }
-    }
   }
 
   setLevel() {
@@ -71,13 +65,14 @@ export default class Main {
       this.components.todoList.setState(this.todoList);
     }
 
-    if (nextLevel && nextLevel) {
+    if (nextLevel && nextExp) {
       this.level = nextLevel;
       this.exp = nextExp;
+      this.whaleStatus = getWhaleStatus(this.level);
       setLocalStorageItem({ key: "level", item: nextLevel });
       setLocalStorageItem({ key: "exp", item: nextExp });
 
-      this.components.whale.setState({ nextLevel: this.level });
+      this.components.whaleImage.setState({ nextLevel: this.level, nextWhaleStatus: this.whaleStatus });
     }
   }
 
