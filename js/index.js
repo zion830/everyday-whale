@@ -1,11 +1,11 @@
 import { getLocalStorageItem } from "./util/localStorage.js";
 import Main from "./comp/Main.js";
 
-document.addEventListener("DOMContentLoaded", (event) => {
-  if (getLocalStorageItem({ key: "name", defalutValue: "" }) !== "") {
-    new Main();
-  } else {
+(function () {
+  if (getLocalStorageItem({ key: "name", defalutValue: "" }) === "") {
     history.replaceState({}, "start", "start.html");
     location.reload();
+  } else {
+    new Main();
   }
-});
+})();
