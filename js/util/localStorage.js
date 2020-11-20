@@ -4,6 +4,7 @@ export const getLocalStorageItem = ({ key, defalutValue }) => {
     return storedItem ? storedItem : defalutValue;
   } catch (e) {
     console.error(e);
+    alert("데이터를 가져오는데 문제가 발생했습니다!");
     return defalutValue;
   }
 };
@@ -14,6 +15,7 @@ export const getLocalStorageJSONItem = ({ key, defalutValue }) => {
     return storedItem ? JSON.parse(storedItem) : defalutValue;
   } catch (e) {
     console.error(e);
+    alert("데이터를 가져오는데 문제가 발생했습니다!");
     return defalutValue;
   }
 };
@@ -22,6 +24,7 @@ export const setLocalStorageItem = ({ key, item }) => {
   try {
     window.localStorage.setItem(key, JSON.stringify(item));
   } catch (e) {
+    alert("데이터를 저장하는데 문제가 발생했습니다!");
     console.error(e);
   }
 };
