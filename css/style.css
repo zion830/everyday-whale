@@ -377,6 +377,10 @@ input[type="checkbox"] {
   color: #003c72;
 }
 
+.setting-title {
+  font-size: 2em;
+}
+
 .setting-des {
   color: #19aac1;
   font-size: 1.1em;
@@ -398,21 +402,16 @@ hr {
 }
 
 .btn-clear {
-  display: inline-block;
-  text-align: center;
-  vertical-align: middle;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  border: 1px solid transparent;
-  padding: 0.2rem 1.2rem 0rem 1.2rem;
-  font-size: 1.3rem;
-  line-height: 1.5;
+  padding: 6px 10px;
+  margin-top: 1%;
+  font-size: 1.5em;
+  line-height: 20px;
+  border: none;
   border-radius: 0.5rem;
   background: #003c72;
   color: white;
-  margin-top: 1%;
+  font-family: "Jua", sans-serif;
+  cursor: pointer;
 }
 
 h4 {
@@ -423,6 +422,11 @@ h4 {
 .info {
   font-family: "Noto Sans KR", sans-serif;
   color: #003c72;
+}
+
+.info > a {
+  color: #003c72;
+  text-decoration: underline;
 }
 
 /* 애니메이션 */
@@ -438,7 +442,7 @@ h4 {
   }
 }
 
-/* 할일 */
+/* 할 일 */
 #count {
   color: #f44186;
 }
@@ -480,8 +484,4 @@ h4 {
   font-size: medium;
   color: black;
   cursor: default;
-}
-
-b {
-  font-weight: bolder;
 }
