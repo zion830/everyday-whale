@@ -28,3 +28,14 @@ export const setLocalStorageItem = ({ key, item }) => {
     console.error(e);
   }
 };
+
+export const removeLocalStorageItem = ({ keys }) => {
+  try {
+    keys.forEach((key) => {
+      window.localStorage.removeItem(key);
+    });
+  } catch (e) {
+    alert("데이터를 삭제하는데 문제가 발생했습니다!");
+    console.error(e);
+  }
+};
