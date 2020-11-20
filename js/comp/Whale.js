@@ -13,7 +13,7 @@ export default class Whale {
 
   setState({ nextName, nextLevel }) {
     if (nextName) this.state.name = nextName;
-    if (nextLevel) this.state.level = level;
+    if (nextLevel) this.state.level = nextLevel;
 
     this.render();
   }

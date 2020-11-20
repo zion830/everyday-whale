@@ -1,6 +1,6 @@
 export const getLocalStorageItem = ({ key, defalutValue }) => {
   try {
-    const storedItem = localStorage.getItem(key);
+    const storedItem = window.localStorage.getItem(key);
     return storedItem ? storedItem : defalutValue;
   } catch (e) {
     console.error(e);
@@ -10,7 +10,7 @@ export const getLocalStorageItem = ({ key, defalutValue }) => {
 
 export const getLocalStorageJSONItem = ({ key, defalutValue }) => {
   try {
-    const storedItem = localStorage.getItem(key);
+    const storedItem = window.localStorage.getItem(key);
     return storedItem ? JSON.parse(storedItem) : defalutValue;
   } catch (e) {
     console.error(e);
