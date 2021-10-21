@@ -6,41 +6,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="body-main">
-  
-  <div class="body-center">
-    <div id="menu">
-      <div class="menu-btn-container">
-        <a href="whale.html" class="btn">
-          <img src="img/ic_whale.png" alt="웨일 버튼" class="btn-img">
-          <div>웨일</div>
-        </a>
-      </div>
-      <div class="menu-btn-container">
-        <a href="todo.html?index=0" class="btn">
-          <img src="img/ic_todo.png" alt="할 일 버튼" class="btn-img">
-          <div>할일</div>
-        </a>
-      </div>
-      <div class="menu-btn-container">
-        <a href="setting.html" class="btn">
-          <img src="img/ic_setting.png" alt="설정 버튼" class="btn-img">
-          <div>설정</div>
-        </a>
-      </div>
-    </div>
+<body class="main-bg">
+  <header class="center">
+    <nav>
+      <ul class="nav-list">
+        <li>
+          <a href="whale.html" class="nav-btn">
+            <img src="img/ic_whale.png" alt="웨일">
+            <div>웨일</div>
+          </a>
+        </li>
+        <li>
+          <a href="todo.html?index=0" class="nav-btn">
+            <img src="img/ic_todo.png" alt="할 일">
+            <div>할일</div>
+          </a>
+        </li>
+        <li>
+          <a href="setting.html" class="nav-btn">
+            <img src="img/ic_setting.png" alt="설정">
+            <div>설정</div>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
 
-    <img alt="웨일 이미지" id="whale-main">
-    <h1 class="whale-info"></h1>
-  </div>
+  <main>
+    <h1 class="sr-only">매일웨일 Todolist</h1>
 
-  <br>
+    <section id="main-whale" class="center"></section>
+    <ul id="todo-list" class="todo-list"></ul>
+    <div id="todo-input" class="todo-input"></div>
+  </main>
 
-  <p id="list-msg" class="center text-blue"></p>
-  <div id="todo-list"></div>
-
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/database.js"></script>
+  <script src="js/index.js" type="module"></script>
 
 </body>
 </html>
